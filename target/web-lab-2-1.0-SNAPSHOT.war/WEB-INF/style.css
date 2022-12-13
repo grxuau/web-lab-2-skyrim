@@ -1,0 +1,36 @@
+@font-face {
+	font-family: skyrim;
+	src: url(/web-recources/futura.otf);
+}
+
+body {
+	font-family: skyrim, serif;
+	
+	background: url(/web-recources/WHITERUN.jpg);
+	background-size: cover;
+}
+
+header {
+	width: 1525px;
+	
+	
+	font-size: 29px;
+	
+	border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+}
+
+section {
+	border-radius: 15px;
+	background: rgba(255, 255, 255, .6);
+	
+	
+	margin: 0 auto;
+	width: 1000px;
+	height: 500px;
+}
+
+#avatar {
+	width: 100px;
+	height: 100px;
+}

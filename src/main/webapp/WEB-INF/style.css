@@ -1,0 +1,51 @@
+@charset "UTF-8";
+body {
+	font-family: skyrim, serif;
+	
+	background: url(/web-resources/WHITERUN.jpg);
+	background-size: cover;
+}
+
+.avatar {
+	width: 100px;
+	height: 100px;
+
+	margin-right: auto;
+	border-radius: 15px;
+}
+
+.header-block {
+	width: 1525px;
+
+	font-size: 29px;
+	
+	border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+}
+
+.header-info {
+	position: absolute;
+	bottom: 5px;
+	left: 115px;
+}
+
+.container {
+	margin-top: 50px;
+
+	border-radius: 15px;
+	background: rgba(255, 255, 255, .6);
+
+	width: 1000px;
+	height: 500px;
+}
+
+.container-header {
+	font-size: xxx-large;
+	text-align: center
+}
+
+/* TODO: make navigation */
+@font-face {
+	font-family: skyrim;
+	src: local("futura.oft")
+}
