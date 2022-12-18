@@ -11,6 +11,13 @@
         body {
             background-image: url("css/images/riverwood-background.webp");
         }
+
+        @font-face {
+            font-family: Futura Family;
+            font-weight: normal;
+
+            src: url("css/fonts/futurabookc.woff2") format("woff");
+        }
     </style>
     <body>
         <header class="header-block">

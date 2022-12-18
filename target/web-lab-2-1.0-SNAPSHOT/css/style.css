@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-	font-family: skyrim, serif;
+	font-family: Futura Family, serif;
 	background-size: cover;
 }
 
@@ -48,8 +48,4 @@ body {
 .container-header {
 	font-size: xxx-large;
 	text-align: center;
-}
-
-@font-face {
-
 }
