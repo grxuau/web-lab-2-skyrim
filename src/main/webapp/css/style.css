@@ -1,8 +1,6 @@
 @charset "UTF-8";
 body {
 	font-family: skyrim, serif;
-	
-	/*background: url("/css/images/riverwood-background.webp");*/
 	background-size: cover;
 }
 
@@ -10,30 +8,38 @@ body {
 	width: 100px;
 	height: 100px;
 
-	margin-right: auto;
+	display: inline;
+
 	border-radius: 15px;
 }
 
 .header-block {
-	width: 1525px;
+	display: block;
 
-	font-size: 29px;
-	
+	font-size: 20px;
+
+	position: relative;
+
 	border-radius: 15px;
     background: rgba(255, 255, 255, .6);
 }
 
 .header-info {
 	position: absolute;
-	bottom: 5px;
-	left: 115px;
+
+	left: 110px;
+	top: 20px;
 }
 
 .container {
 	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 
 	border-radius: 15px;
 	background: rgba(255, 255, 255, 0.6);
+
+	position: relative;
 
 	width: 1000px;
 	height: 500px;
@@ -41,7 +47,7 @@ body {
 
 .container-header {
 	font-size: xxx-large;
-	text-align: center
+	text-align: center;
 }
 
 @font-face {

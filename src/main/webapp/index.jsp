@@ -7,13 +7,14 @@
         <link href = "css/style.css" rel="stylesheet" type="text/css">
     </head>
     <style>
+        /*FIXME*/
         body {
             background-image: url("css/images/riverwood-background.webp");
         }
     </style>
     <body>
-        <header>
-            <img class = "avatar" src = "css/images/skyrim-logo.png" alt = "avatar">
+        <header class="header-block">
+            <img class = "avatar" src = "css/images/skyrim-avatar.jpg" alt = "avatar">
             <span class = "header-info">
                 Student: Chesnokov Arkady <br>
                 Group: P32111             <br>
