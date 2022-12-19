@@ -48,8 +48,6 @@ body {
 .container-header {
 	font-size: xxx-large;
 	text-align: center;
-}
 
-.container-input {
-	font-size: small;
+	position: relative;
 }
