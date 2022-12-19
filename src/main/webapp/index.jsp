@@ -31,6 +31,30 @@
         <div class="container">
             <div class="container-header">
                 Enter point coordinates
+                <div class="container-input">
+                    Select 'X'
+                    <form name="input-coordinates" method="get" action="validator.js">
+                        <input type="radio" id="x1" name="xCoord" value="-5" required>
+                        <label for="x1">-5</label>
+                        <input type="radio" id="x2" name="xCoord" value="-4" required>
+                        <label for="x2">-4</label>
+                        <input type="radio" id="x3" name="xCoord" value="-3" required>
+                        <label for="x3">-3</label>
+                        <input type="radio" id="x4" name="xCoord" value="-2" required>
+                        <label for="x4">-2</label>
+                        <input type="radio" id="x5" name="xCoord" value="-1" required>
+                        <label for="x5">-1</label>
+                        <input type="radio" id="x6" name="xCoord" value="0" required>
+                        <label for="x6">0</label>
+                        <input type="radio" id="x7" name="xCoord" value="1" required>
+                        <label for="x7">1</label>
+                        <input type="radio" id="x8" name="xCoord" value="2" required>
+                        <label for="x8">2</label>
+                        <input type="radio" id="x9" name="xCoord" value="3" required>
+                        <label for="x9">3</label>
+
+                    </form>
+                </div>
             </div>
         </div>
     </body>

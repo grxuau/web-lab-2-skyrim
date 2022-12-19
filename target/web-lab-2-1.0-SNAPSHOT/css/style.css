@@ -49,3 +49,7 @@ body {
 	font-size: xxx-large;
 	text-align: center;
 }
+
+.container-input {
+	font-size: small;
+}
