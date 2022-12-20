@@ -1,7 +1,14 @@
 @charset "UTF-8";
+
+/*можно ли сделать несколько одинаковых селекторов?*/
 body {
 	font-family: Futura Family, serif;
 	background-size: cover;
+	background-image: url("/css/images/riverwood-background.webp");
+}
+
+fieldset {
+	border: 0;
 }
 
 .avatar {
@@ -50,4 +57,21 @@ body {
 	text-align: center;
 
 	position: relative;
+}
+
+.container-coord {
+	right: 500px;
+
+}
+
+.coordinate-plane {
+	position: relative;
+
+	width: 400px;
+	height: 290px;
+
+	left: 500px;
+	bottom: 210px;
+
+	display: inline;
 }

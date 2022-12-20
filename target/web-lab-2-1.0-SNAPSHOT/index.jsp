@@ -6,14 +6,18 @@
         <title>LAB2: CHESNOKOV P32111</title>
         <link href = "css/style.css" rel="stylesheet" type="text/css">
     </head>
+
     <style>
-        /*FIXME*/
         body {
+            font-family: Futura Family, serif;
+            background-size: cover;
             background-image: url("css/images/riverwood-background.webp");
         }
 
-        fieldset {
-            border: 0;
+        .container-input {
+            font-size: large;
+
+            margin: 20px;
         }
 
         @font-face {
@@ -23,12 +27,8 @@
             src: url("css/fonts/futurabookc.woff2") format("woff");
         }
 
-        .container-input {
-            font-size: large;
-
-            margin: 20px;
-        }
     </style>
+
     <body>
         <header class="header-block">
             <img class = "avatar" src = "css/images/skyrim-avatar.jpg" alt = "avatar">
@@ -43,7 +43,7 @@
                 Enter point coordinates
             </div>
             <div class="container-input">
-                <form name="input-coordinates" method="get" action="validator.js">
+                <form name="input-coordinates" method="get" action="<%= request.getContextPath() %>/controller-servlet">
                     <fieldset>
                         <legend> Select 'X' </legend>
                         <input type="radio" id="x1" name="xCoord" value="-5" required>
@@ -94,16 +94,26 @@
 
                     <fieldset>
                         <legend> Type 'Y' </legend>
-                        <input type="text" id="yCoord" required>
+<%--                        а так можно?--%>
+                        <input type="text" id="yCoord" name="yCoord" required>
                         <label for="yCoord"></label>
                     </fieldset>
 
                     <fieldset>
                         <button type="submit"> Fus Ro Dah! </button>
+                        <button type="reset"> Krii Lun Aus! </button>
                     </fieldset>
 
                 </form>
+
+                <div class = "container-coord">
+                    <img class="coordinate-plane" src="css/images/coord-plane.png" alt="coordinate plane">
+<%--                   TODO: Книга разрушения - выпадающее меню - туда результаты попадания --%>
+                </div>
             </div>
+
+
         </div>
     </body>
+    <script src="scripts/validator.js"></script>
     </html>

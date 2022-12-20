@@ -10,14 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/images/coord-plane.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/skyrim-logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/images/skyrim-logo-task.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/css/images/skyrim-logo.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/web-lab-2-1.0-SNAPSHOT/validator.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,11 +37,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="hkzkrl49" />
@@ -65,10 +80,10 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\images" />
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\scripts" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\web-resources\images" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\web-resources" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
@@ -184,7 +199,9 @@
       <workItem from="1671128017503" duration="4968000" />
       <workItem from="1671134579465" duration="2023000" />
       <workItem from="1671363826669" duration="689000" />
-      <workItem from="1671364672653" duration="23839000" />
+      <workItem from="1671364672653" duration="31722000" />
+      <workItem from="1671475145585" duration="5923000" />
+      <workItem from="1671544162220" duration="4429000" />
     </task>
     <servers />
   </component>
