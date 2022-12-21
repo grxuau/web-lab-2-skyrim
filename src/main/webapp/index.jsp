@@ -43,7 +43,7 @@
                 Enter point coordinates
             </div>
             <div class="container-input">
-                <form name="input-coordinates" method="get" action="<%= request.getContextPath() %>/controller-servlet">
+                <form id="input-coordinates" method="get" action="<%= request.getContextPath() %>/controller-servlet">
                     <fieldset>
                         <legend> Select 'X' </legend>
                         <input type="radio" id="x1" name="xCoord" value="-5" required>

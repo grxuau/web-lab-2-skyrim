@@ -73,42 +73,34 @@ function check_x() {
     })
 }
 
+//FIXME: сделать функцию проверок красивой
 function check_r() {
     const startsWithZero = new RegExp("^0+\\d+$");
     const numberSystems = new RegExp("(0x|0o|0b)\d*")
 
-    let rValues = ['1', '2', '3', '4', '5']
-    const rElement = document.querySelector('input[name="rcoord"]:checked').value
-    const r = rElement.replace(',', '.').trim();
+    let availableValues = ['1', '1.5', '2', '2.5', '3']
+    const rElements = document.querySelector('input[name="rСoord"]:checked').value
 
-    if (r.length > 14) {
-        alert('Input is too long! Max length: 14')
-        return false
-    }
-
-
-
-    //FIXME: else if
-    if (startsWithZero.test(r)) {
-        alert('There must be no zeros at the beginning of an integer!\n')
-        return valid
-    }
-
-    if (numberSystems.test(r)) {
-        alert('Use decimal bro')
-        return valid
-    }
-
-    rValues.forEach(function (avalValue, index,  xValues) {
-        if (r === avalValue) {
-            valid = true
-            return valid
+    rElements.forEach(function (rElement) {
+        rElement.replace(',', '.')
+            .trim()
+    })
+    //FIXME НУ НЕ КАЖДЫЙ ЖЕ РАЗ ВЫВОДИТЬ СООБЩЕНИЕ
+    rElements.forEach(function (rElement) {
+        if (startsWithZero.test(rElement)) {
+            alert('There must be no zeros at the beginning of an integer!\n')
+            pointCoords.isValid = false
+        } else if (numberSystems.test(rElement)) {
+            alert('Use decimal, warrior')
         }
     })
-
-    if (!valid) {
-        alert('I\'m sorry, but R value is incorrect!')
-    }
-    return valid
 }
 
+    //FIXME: написать проверку соответствия допустимым значениям
+
+
+form = document.getElementById('input-coordinates')
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    //FIXME: дописать код
+})

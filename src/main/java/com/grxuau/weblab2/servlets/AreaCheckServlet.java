@@ -13,6 +13,7 @@ public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LocalDateTime workTime = LocalDateTime.now(ZoneOffset.UTC);
+
     }
     //можно ли назвать это "валидацией на сервере"?
     private boolean validate(double x, double y, double r) {
@@ -44,7 +45,4 @@ public class AreaCheckServlet extends HttpServlet {
         }
         return false;
     }
-
-
-
 }
