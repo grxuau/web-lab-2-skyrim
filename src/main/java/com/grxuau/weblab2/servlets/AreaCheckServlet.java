@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-
+//TODO: добавить полную валидацию на случай отключения JavaScript'a!
 public class AreaCheckServlet extends HttpServlet {
 
     @Override

@@ -28,7 +28,7 @@
         }
 
     </style>
-
+<%--FIXME: просит установить все флажки--%>
     <body>
         <header class="header-block">
             <img class = "avatar" src = "css/images/skyrim-avatar.jpg" alt = "avatar">
@@ -76,19 +76,19 @@
 
                     <fieldset>
                         <legend> Select 'R' </legend>
-                        <input type="checkbox" id="r1" name="rCoord" value="1" required>
+                        <input type="checkbox" id="r1" name="rCoord" value="1">
                         <label for="r1">1</label>
 
-                        <input type="checkbox" id="r1.5" name="rCoord" value="1.5" required>
+                        <input type="checkbox" id="r1.5" name="rCoord" value="1.5">
                         <label for="r1.5">1.5</label>
 
-                        <input type="checkbox" id="r2" name="rCoord" value="2" required>
+                        <input type="checkbox" id="r2" name="rCoord" value="2">
                         <label for="r2">2</label>
 
-                        <input type="checkbox" id="r2.5" name="rCoord" value="2.5" required>
+                        <input type="checkbox" id="r2.5" name="rCoord" value="2.5">
                         <label for="r2.5">2.5</label>
 
-                        <input type="checkbox" id="r3" name="rCoord" value="3" required>
+                        <input type="checkbox" id="r3" name="rCoord" value="3">
                         <label for="r3">3</label>
                     </fieldset>
 
@@ -115,5 +115,6 @@
 
         </div>
     </body>
-    <script src="scripts/validator.js"></script>
+    <script defer src="scripts/jquery-3.6.3.js"></script>
+    <script defer src="scripts/validator.js"></script>
     </html>

@@ -10,6 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/skyrim.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/skyrim.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jquery-3.6.3.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
@@ -43,9 +47,9 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/css/style.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="hkzkrl49" />
@@ -61,7 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DELETEIT/skyrim" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14941406" />
@@ -70,15 +74,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\area" />
       <recent name="C:\java_senior\web-lab-2\src\main\resources" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\area" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\images" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\scripts" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\web-resources\images" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
@@ -156,6 +161,18 @@
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/web-lab-2-1.0-SNAPSHOT/index.jsp">
       <method v="2" />
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]" />
@@ -183,7 +200,9 @@
       <workItem from="1671364672653" duration="31722000" />
       <workItem from="1671475145585" duration="5923000" />
       <workItem from="1671544162220" duration="8492000" />
-      <workItem from="1671605776653" duration="5825000" />
+      <workItem from="1671605776653" duration="11837000" />
+      <workItem from="1671687094437" duration="2787000" />
+      <workItem from="1671689950768" duration="2472000" />
     </task>
     <servers />
   </component>
