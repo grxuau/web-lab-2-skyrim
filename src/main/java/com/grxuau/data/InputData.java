@@ -1,25 +1,25 @@
 package com.grxuau.data;
 
 public class InputData {
-    float x;
-    float y;
-    float r;
+    double x;
+    double y;
+    double r;
 
-    public InputData(float x, float y, float r) {
+    public InputData(double x, double y, double r) {
         this.x = x;
         this.y = y;
         this.r = r;
     }
 
-    public float getX() {
+    public double getX() {
         return x;
     }
 
-    public float getY() {
+    public double getY() {
         return y;
     }
 
-    public float getR() {
+    public double getR() {
         return r;
     }
 

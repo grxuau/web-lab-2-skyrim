@@ -32,16 +32,16 @@ public class AreaChecker {
         return pixelColour == -16449;
     }
 
-    private int getPixelColumn(BufferedImage image, float x, float r) {
+    private int getPixelColumn(BufferedImage image, double x, double r) {
         int widthPx = image.getWidth();
-        float pixelColumn = ((r + x) / (2 * r)) * widthPx;
-        return Math.round(pixelColumn);
+        double pixelColumn = ((r + x) / (2 * r)) * widthPx;
+        return (int) Math.round(pixelColumn);
     }
 
-    private int getPixelRow(BufferedImage image, float y, float r) {
+    private int getPixelRow(BufferedImage image, double y, double r) {
         int heightPx = image.getHeight();
-        float pixelRow = ((r - y) / (2 * r)) * heightPx;
-        return Math.round(pixelRow);
+        double pixelRow = ((r - y) / (2 * r)) * heightPx;
+        return (int) Math.round(pixelRow);
     }
 
 

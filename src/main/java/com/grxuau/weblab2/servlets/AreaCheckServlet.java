@@ -5,7 +5,6 @@ import com.grxuau.weblab2.area.AreaChecker;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,35 +14,65 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 //TODO: добавить полную валидацию на случай отключения JavaScript'a!
-@WebServlet("/area-check-servlet")
 public class AreaCheckServlet extends HttpServlet {
     //FIXME проверить, содержит ли запрос координаты точки
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LocalDateTime workTime = LocalDateTime.now(ZoneOffset.UTC);
 
-        double x = Double.parseDouble(req.getParameter("xCoord"));
-        double y = Double.parseDouble(req.getParameter("yCoord"));
-        //FIXME: скорее всего здесь будет падать
-        String r = req.getParameter("rCoord");
-//
-//        if (validate(x, y, r)) {
-//            resp.setStatus(400);
-//        }
-//
+        try {
+            double x = Double.parseDouble(req.getParameter("x"));
+            double y = Double.parseDouble(req.getParameter("y"));
+            String[] r = req.getParameterValues("r[]");
+
+            for (String rElement: r) {
+                if (!validateR(Double.parseDouble(rElement))) {
+                    resp.setStatus(466);
+                }
+            }
+
+            boolean isValid = validateX(x) && validateY(y);
+
+            if (isValid) {
+                for (String rElement : r) {
+                    boolean hit = isHit(x, y, Double.parseDouble(rElement));
+
+                }
+            }
+
+        } catch (NullPointerException | NumberFormatException e) {
+            resp.setStatus(477);
+        }
+
+
 //        boolean status = isHit()
 
 
     }
 
-    private boolean isHit(float x, float y, float r) {
+//    @Override
+//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        LocalDateTime workTime = LocalDateTime.now(ZoneOffset.UTC);
+//
+//        double x = Double.parseDouble(req.getParameter("x"));
+//        double y = Double.parseDouble(req.getParameter("yCoord"));
+//        String[] r = req.getParameterValues("r[]");
+//
+//        for (String rElement: r) {
+//            if (validate(x, y, Double.parseDouble(rElement))) {
+//                resp.setStatus(477);
+//            }
+//        }
+//    }
+
+    private boolean isHit(double x, double y, double r) {
         File image = new File("skyrim.png");
         try {
             BufferedImage bufferedImage = ImageIO.read(image);
 
             AreaChecker areaChecker = new AreaChecker(bufferedImage);
 
-            InputData inputData = new InputData( x, y,  r);
+            InputData inputData = new InputData( x, y, r);
 
             return areaChecker.checkHit(inputData);
         } catch (IOException e) {

@@ -9,16 +9,22 @@ import java.io.Writer;
 
 public class ControllerServlet extends HttpServlet {
     final static int BAD_REQUEST = 400;
-    //FIXME: как оно определяет тип запроса?
+
+    //boolean isPost = "POST".equals(request.getMethod());
+    //прописать post-запрос
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            double x = Double.parseDouble(req.getParameter("x"));
-            double y = Double.parseDouble(req.getParameter("y"));
+            Double x = Double.parseDouble(req.getParameter("x"));
+            Double y = Double.parseDouble(req.getParameter("y"));
             String[] r = req.getParameterValues("r[]");
+            //FIXME
+            if ((r.length >= 1) && ("GET".equals(req.getMethod()))) {
+                req.getRequestDispatcher("/area-check-servlet").forward(req, resp);
+            } else {
+                resp.setStatus(400);
+            }
 
-
-//            req.getRequestDispatcher("/area-check-servlet").forward(req, resp);
         } catch (NullPointerException | NumberFormatException e) {
             Writer writer = resp.getWriter();
             writer.write("ОШИБКА");

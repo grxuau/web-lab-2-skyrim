@@ -162,8 +162,7 @@ $(document).ready(function () {
                 r: pointCoords.rCoord
             },
             error: function(jqXHR, exception) {
-                alert('Запрос не был отправлен!' + jqXHR.status)
-                alert(exception)
+                alert('Запрос не был отправлен!' + jqXHR.status + ' ' + exception)
             }
         })
     }
@@ -173,8 +172,6 @@ $(document).ready(function () {
     let form = document.getElementById('input-coordinates')
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        //FIXME 2 раза вызывает
-        //FIXME на этом этапе 1 раз
         validate()
         if (pointCoords.isValid) {
             sendGetRequest()
