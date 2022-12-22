@@ -130,8 +130,8 @@ $(document).ready(function () {
         pointCoords.isValid = r.every(rElement => availableValues.includes(rElement))
 
         if (pointCoords.isValid) {
-            pointCoords.rCoords = rElements
-            alert('valid!')
+            pointCoords.rCoord = r
+            // alert('valid!')
         }
     }
 
@@ -152,18 +152,18 @@ $(document).ready(function () {
 
 
     function sendGetRequest() {
-        alert("send-test")
+        // alert("send-test")
         $.ajax({
-            url: '/area-check-servlet',
+            url: 'controller-servlet',
             method: 'GET',
             data: {
                 x: pointCoords.xCoord,
                 y: pointCoords.yCoord,
                 r: pointCoords.rCoord
             },
-            dataType: 'JSON',
-            error: function(jqXHR) {
-                alert('Запрос не был отправлен!' + jqXHR.statusText)
+            error: function(jqXHR, exception) {
+                alert('Запрос не был отправлен!' + jqXHR.status)
+                alert(exception)
             }
         })
     }
