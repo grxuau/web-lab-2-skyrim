@@ -12,8 +12,20 @@ $(document).ready(function () {
     //GOVNOCODE
     function validate() {
         check_x()
+        if (pointCoords.isValid == false) {
+            alert('first if')
+            return
+        }
         check_y()
+        if (pointCoords.isValid == false) {
+            alert('second if')
+            return
+        }
         check_r()
+        if (pointCoords.isValid == false) {
+            alert('third if')
+            return false
+        }
     }
 
 //FIXME: переименовать регулярки
@@ -34,16 +46,16 @@ $(document).ready(function () {
             pointCoords.isValid = false
         } else if (isNaN(yElement) || isNaN(parseFloat(yElement))) {
             alert('Invalid input!')
-            pointCoords.valid = false
+            pointCoords.isValid = false
         } else if (startsWithZero.test(yElement)){
             alert('Number cannot starts with zero!')
-            pointCoords.valid = false;
+            pointCoords.isValid = false;
         } else if (numberSystems.test(yElement)) {
             alert("You can only enter numbers in decimal notation!");
-            pointCoords.valid = false;
+            pointCoords.isValid = false;
         } else if (parseFloat(yElement) < -5 || parseFloat(yElement) > 5) {
             alert('Please enter a number between -5 and 5')
-            pointCoords.valid = false;
+            pointCoords.isValid = false;
         } else {
             pointCoords.yCoord = yElement
             pointCoords.isValid = true;
@@ -66,7 +78,7 @@ $(document).ready(function () {
             pointCoords.isValid = false
         } else if (isNaN(xElement) || isNaN(parseFloat(xElement))) {
             alert('Invalid input!')
-            pointCoords.valid = false
+            pointCoords.isValid = false
         } else if (startsWithZero.test(xElement)) {
             alert('There must be no zeros at the beginning of an integer!\n')
             pointCoords.isValid = false
@@ -83,34 +95,23 @@ $(document).ready(function () {
         })
     }
 
-
-    function get_checked_boxes(checkboxName) {
-        let checkboxes = document.getElementsByName(checkboxName)
-        let checkboxesChecked = []
-
-        for (let i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                checkboxesChecked.push(checkboxes[i])
-            }
-        }
-        // return checkboxesChecked.length > 0 ? checkboxesChecked : null;
-        return checkboxesChecked
-    }
-
-//FIXME: сделать функцию проверок красивой
+    //FIXME: сделать функцию проверок красивой
     function check_r() {
         const startsWithZero = new RegExp("^0+\\d+$");
         const numberSystems = new RegExp("(0x|0o|0b)\d*")
 
         let availableValues = ['1', '1.5', '2', '2.5', '3']
-        const rElements = get_checked_boxes("rCoord")
 
-        rElements.forEach(function (rElement) {
+
+        const rElements = get_checked_boxes("rCoord");
+        let r = rElements.trim().split(" ")
+
+        r.forEach(function (rElement) {
             rElement.replace(',', '.')
-                .trim()
+                    .trim()
         })
 
-        rElements.every(function (rElement) {
+        r.every(function (rElement) {
             if (startsWithZero.test(rElement)) {
                 alert('There must be no zeros at the beginning of an integer!\n')
                 pointCoords.isValid = false
@@ -119,34 +120,64 @@ $(document).ready(function () {
                 alert('Use decimal, warrior')
                 pointCoords.isValid = false
                 return false
+            } else {
+                pointCoords.isValid = true
             }
         })
 
         //FIXME: переписать проходы под every()
 
-        pointCoords.isValid = rElements.every(rElement => availableValues.includes(rElement))
+        pointCoords.isValid = r.every(rElement => availableValues.includes(rElement))
 
         if (pointCoords.isValid) {
             pointCoords.rCoords = rElements
+            alert('valid!')
         }
     }
 
+
+    function get_checked_boxes(checkboxName) {
+        let checkboxes = document.getElementsByName(checkboxName)
+
+        let result = ""
+
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                result += checkboxes[i].value + " "
+            }
+        }
+        // return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+        return result
+    }
+
+
+    function sendGetRequest() {
+        alert("send-test")
+        $.ajax({
+            url: '/area-check-servlet',
+            method: 'GET',
+            data: {
+                x: pointCoords.xCoord,
+                y: pointCoords.yCoord,
+                r: pointCoords.rCoord
+            },
+            dataType: 'JSON',
+            error: function(jqXHR) {
+                alert('Запрос не был отправлен!' + jqXHR.statusText)
+            }
+        })
+    }
+
+
+    //TODO сделать проверки чекбоксов
     let form = document.getElementById('input-coordinates')
     form.addEventListener('submit', (e) => {
         e.preventDefault()
         //FIXME 2 раза вызывает
-        $('form').submit(function () {
-            if ($('input:checkbox').filter(':checked').length < 1) {
-                alert("Check at least one radius, warrior!")
-            } else {
-                validate()
-                if (pointCoords.isValid) {
-
-                }
-            }
-        })
-
-
+        //FIXME на этом этапе 1 раз
+        validate()
+        if (pointCoords.isValid) {
+            sendGetRequest()
+        }
     })
-
 })

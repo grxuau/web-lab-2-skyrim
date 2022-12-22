@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/skyrim.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/skyrim.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/jquery-3.6.3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/data/InputData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/undertow-handlers.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" afterDir="false" />
     </list>
@@ -88,6 +89,7 @@
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
     <configuration name="JBoss/WildFly 20.0.0.Final [8]" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 20.0.0.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="liberica-1.8">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="web-lab-2:war exploded">
@@ -202,7 +204,7 @@
       <workItem from="1671544162220" duration="8492000" />
       <workItem from="1671605776653" duration="11837000" />
       <workItem from="1671687094437" duration="2787000" />
-      <workItem from="1671689950768" duration="2472000" />
+      <workItem from="1671689950768" duration="18128000" />
     </task>
     <servers />
   </component>
@@ -220,5 +222,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/webapp/scripts/validator.js</url>
+          <line>173</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
