@@ -15,9 +15,7 @@ public class ControllerServlet extends HttpServlet {
         try {
             double x = Double.parseDouble(req.getParameter("x"));
             double y = Double.parseDouble(req.getParameter("y"));
-
-            //FIXME: скорее всего здесь будет падать
-//            String r = req.getParameter("r[]");
+            String[] r = req.getParameterValues("r[]");
 
 
 //            req.getRequestDispatcher("/area-check-servlet").forward(req, resp);
