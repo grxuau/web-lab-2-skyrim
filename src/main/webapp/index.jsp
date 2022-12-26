@@ -26,9 +26,7 @@
 
             src: url("css/fonts/futurabookc.woff2") format("woff");
         }
-
     </style>
-<%--FIXME: просит установить все флажки--%>
     <body>
         <header class="header-block">
             <img class = "avatar" src = "css/multimedia/skyrim-avatar.jpg" alt = "avatar">
@@ -94,7 +92,6 @@
 
                     <fieldset>
                         <legend> Type 'Y' </legend>
-<%--                        а так можно?--%>
                         <input type="text" id="yCoord" name="yCoord" required>
                         <label for="yCoord"></label>
                     </fieldset>
@@ -108,8 +105,14 @@
 
                 <div class = "container-coord">
                     <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
-<%--                   TODO: Книга разрушения - выпадающее меню - туда результаты попадания --%>
                 </div>
+
+                <noscript>
+                    <div class="error">
+<%--                        fixme не перенаправляет--%>
+                        <meta http-equiv="Refresh" content="0; url='/js-not-allowed.jsp'" />
+                    </div>
+                </noscript>
             </div>
 
 

@@ -7,11 +7,14 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+
 //TODO: добавить полную валидацию на случай отключения JavaScript'a!
 public class AreaCheckServlet extends HttpServlet {
     static final short PROCESSING_ERROR_CODE = 418; //i'm teapot xd
@@ -19,9 +22,15 @@ public class AreaCheckServlet extends HttpServlet {
     //FIXME проверить, содержит ли запрос координаты точки
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        LocalDateTime workTime = LocalDateTime.now(ZoneOffset.UTC);
+        LocalDateTime localTime = LocalDateTime.now(ZoneOffset.UTC);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formatLocalTime = localTime.format(formatter);
+
+        long startTime = System.currentTimeMillis();
 
         try {
+
+
             double x = Double.parseDouble(req.getParameter("x"));
             double y = Double.parseDouble(req.getParameter("y"));
             String[] r = req.getParameterValues("r[]");
@@ -32,7 +41,7 @@ public class AreaCheckServlet extends HttpServlet {
                 }
             }
 
-            boolean isValid = validateX(x) && validateY(y); //no need to check with r together
+            boolean isValid = validateX(x) && validateY(y);
 
             if (isValid) {
                 int checkNumber = 0;
@@ -45,27 +54,36 @@ public class AreaCheckServlet extends HttpServlet {
                     hitResults[checkNumber] = hit;
                     checkNumber++;
                 }
+
+                StringBuilder resultString = new StringBuilder();
+                for (byte i = 0; i < hitResults.length; i++) {
+                    resultString.append(r[i])
+                                .append("- ")
+                                .append(hitResults[i])
+                                .append(";");
+                    if (i == hitResults.length - 1) {
+                        resultString.deleteCharAt(resultString.length()-1); //удаление ';'
+                    }
+                }
+
+                long endTime = System.currentTimeMillis();
+                long executeTime = endTime - startTime;
+
+                HttpSession session = req.getSession();
+                session.setAttribute("x", x);
+                session.setAttribute("y", y);
+                session.setAttribute("r", r);
+                session.setAttribute("curtime", formatLocalTime);
+                session.setAttribute("exectime", executeTime);
+                session.setAttribute("hitres", resultString);
+
+                resp.sendRedirect(req.getContextPath() + "/result.jsp");
             }
-        //TODO: передать hitResults
-        } catch (NullPointerException | NumberFormatException e) {
+        } catch (NullPointerException | NumberFormatException | IOException e) {
+            System.err.println("Отладка: ошибка");
             resp.setStatus(PROCESSING_ERROR_CODE);
         }
     }
-
-//    @Override
-//    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        LocalDateTime workTime = LocalDateTime.now(ZoneOffset.UTC);
-//
-//        double x = Double.parseDouble(req.getParameter("x"));
-//        double y = Double.parseDouble(req.getParameter("yCoord"));
-//        String[] r = req.getParameterValues("r[]");
-//
-//        for (String rElement: r) {
-//            if (validate(x, y, Double.parseDouble(rElement))) {
-//                resp.setStatus(477);
-//            }
-//        }
-//    }
 
     private boolean isHit(double x, double y, double r) {
         //FIXME понять, как сделать путь короче
@@ -79,15 +97,10 @@ public class AreaCheckServlet extends HttpServlet {
             InputData inputData = new InputData(x, y, r);
 
             return areaChecker.checkHit(inputData);
-            //FIXME Cannot read a file
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("An error occurred while processing the bitmap image.");
             return false;
         }
-    }
-
-    private boolean validate(double x, double y, double r) {
-        return validateX(x) && validateY(y) && validateR(r);
     }
 
     private boolean validateX(double x) {

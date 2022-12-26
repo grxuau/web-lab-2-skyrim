@@ -14,7 +14,6 @@ public class AreaChecker {
     public boolean checkHit(InputData inputData) {
         try {
             int pixel = getPixel(inputData);
-            int checkPixel = pixel;
             return checkPixelBelongToArea(pixel);
         } catch (ArrayIndexOutOfBoundsException e) {
             return false;

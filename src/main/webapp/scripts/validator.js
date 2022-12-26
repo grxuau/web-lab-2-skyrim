@@ -14,17 +14,14 @@ $(document).ready(function () {
     function validate() {
         check_x()
         if (pointCoords.isValid == false) {
-            alert('first if')
             return
         }
         check_y()
         if (pointCoords.isValid == false) {
-            alert('second if')
             return
         }
         check_r()
         if (pointCoords.isValid == false) {
-            alert('third if')
             return false
         }
     }
@@ -132,7 +129,6 @@ $(document).ready(function () {
 
         if (pointCoords.isValid) {
             pointCoords.rCoord = r
-            // alert('valid!')
         }
     }
 
