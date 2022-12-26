@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Result Table</title>
-    <link href = "css/stylesheets/result.css" rel="stylesheet" type="text/css">
+    <link href = "../../../../../webapp/css/stylesheets/result.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div>
-    <video autoplay muted loop id="myVideo">
-        <source src="css/multimedia/skyrim-gameplay-with-mods.mp4" type="video/mp4">
-    </video>
+<video autoplay muted loop id="myVideo">
+    <source src="../../../../../webapp/css/multimedia/skyrim-gameplay-with-mods.mp4" type="video/mp4">
+</video>
 
 
-</div>
+
 </body>
 
