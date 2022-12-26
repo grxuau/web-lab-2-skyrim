@@ -10,6 +10,7 @@ $(document).ready(function () {
     };
 
     //GOVNOCODE
+    //FIXME удостовериться, что проверки работают так как задуманно
     function validate() {
         check_x()
         if (pointCoords.isValid == false) {

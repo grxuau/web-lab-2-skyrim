@@ -12,13 +12,14 @@ public class ControllerServlet extends HttpServlet {
 
     //boolean isPost = "POST".equals(request.getMethod());
     //прописать post-запрос
+    //TODO что происходит при повторном запросе?
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Double x = Double.parseDouble(req.getParameter("x"));
             Double y = Double.parseDouble(req.getParameter("y"));
             String[] r = req.getParameterValues("r[]");
-            //FIXME
+            //FIXME (ЧТО ПОФИКСИТЬ ТО БЛЯТЬ, ПИШИ КОНКРЕТНО ВСЕГДА)
             if ((r.length >= 1) && ("GET".equals(req.getMethod()))) {
                 req.getRequestDispatcher("/area-check-servlet").forward(req, resp);
             } else {

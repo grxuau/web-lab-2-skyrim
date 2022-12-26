@@ -10,12 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skyrim-gameplay-with-mods.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skyrim-shout-zoomed-out.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/js-not-allowed.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/result.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js-not-allowed.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/result.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/data/InputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/data/InputData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/skyrim.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/skyrim.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/coord-plane.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/coord-plane.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/riverwood-background.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/riverwood-background.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/skyrim-avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skyrim-avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/skyrim-logo-task.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skyrim-logo-task.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/images/task.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/task.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +44,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="jsf" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -47,7 +62,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/css/style.css" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
@@ -64,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14941406" />
@@ -73,19 +88,33 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\java_senior\web-lab-2\src\main\resources\images" />
       <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\area" />
       <recent name="C:\java_senior\web-lab-2\src\main\resources" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\area" />
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\images" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\scripts" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp" />
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\stylesheets" />
+      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2" />
+      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\servlets" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.grxuau.Main" />
+      <module name="web-lab-2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grxuau.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JBoss/WildFly 20.0.0.Final [8]" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 20.0.0.Final" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="liberica-1.8">
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -176,9 +205,11 @@
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JavaScript Debug.index.jsp" />
       </list>
     </recent_temporary>
@@ -202,7 +233,7 @@
       <workItem from="1671544162220" duration="8492000" />
       <workItem from="1671605776653" duration="11837000" />
       <workItem from="1671687094437" duration="2787000" />
-      <workItem from="1671689950768" duration="27942000" />
+      <workItem from="1671689950768" duration="40553000" />
     </task>
     <servers />
   </component>
@@ -226,24 +257,54 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/main/webapp/scripts/validator.js</url>
-          <line>172</line>
+          <line>173</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java</url>
-          <line>21</line>
+          <line>22</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

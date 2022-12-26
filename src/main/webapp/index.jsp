@@ -4,14 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <title>LAB2: CHESNOKOV P32111</title>
-        <link href = "css/style.css" rel="stylesheet" type="text/css">
+        <link href = "css/stylesheets/index.css" rel="stylesheet" type="text/css">
     </head>
 
     <style>
         body {
             font-family: Futura Family, serif;
             background-size: cover;
-            background-image: url("css/images/riverwood-background.webp");
+            background-image: url("css/multimedia/riverwood-background.webp");
         }
 
         .container-input {
@@ -31,7 +31,7 @@
 <%--FIXME: просит установить все флажки--%>
     <body>
         <header class="header-block">
-            <img class = "avatar" src = "css/images/skyrim-avatar.jpg" alt = "avatar">
+            <img class = "avatar" src = "css/multimedia/skyrim-avatar.jpg" alt = "avatar">
             <span class = "header-info">
                 Student: Chesnokov Arkady <br>
                 Group: P32111             <br>
@@ -107,7 +107,7 @@
                 </form>
 
                 <div class = "container-coord">
-                    <img class="coordinate-plane" src="css/images/coord-plane.png" alt="coordinate plane">
+                    <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
 <%--                   TODO: Книга разрушения - выпадающее меню - туда результаты попадания --%>
                 </div>
             </div>

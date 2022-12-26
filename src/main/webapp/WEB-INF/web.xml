@@ -8,6 +8,7 @@
         <servlet-name>ControllerServlet</servlet-name>
         <servlet-class>com.grxuau.weblab2.servlets.ControllerServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/controller-servlet</url-pattern>
@@ -17,9 +18,20 @@
         <servlet-name>AreaCheckServlet</servlet-name>
         <servlet-class>com.grxuau.weblab2.servlets.AreaCheckServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>AreaCheckServlet</servlet-name>
         <url-pattern>/area-check-servlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Result</servlet-name>
+        <servlet-class></servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Result</servlet-name>
+        <url-pattern>/result</url-pattern>
     </servlet-mapping>
 
 </web-app>
