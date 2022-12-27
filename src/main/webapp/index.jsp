@@ -100,6 +100,10 @@
                         <button type="submit"> Fus Ro Dah! </button>
                         <button type="reset"> Krii Lun Aus! </button>
                     </fieldset>
+<%--                    FIXME если нажать до отправки - будет ошибка --%>
+                    <fieldset>
+                        <a href="result.jsp">SPELL TOME: REANIMATE CORPSE</a>
+                    </fieldset>
 
                 </form>
 

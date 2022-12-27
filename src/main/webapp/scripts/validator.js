@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const MAX_LENGTH = 12;
-
+    //ПОМЕНЯТЬ АЛЕРТЫ НА НОРМАЛЬНОЕ СООБЩЕНИЕ ОБ ОШИБКЕ
     let pointCoords = {
         xCoord: undefined,
         yCoord: undefined,
@@ -25,9 +25,7 @@ $(document).ready(function () {
             return false
         }
     }
-
-//FIXME: переименовать регулярки
-//FIXME: сделать код чище
+    
     function check_y() {
         const startsWithZero = new RegExp("^0+\\d+$");
         const numberSystems = new RegExp("(0x|0o|0b)\d*")

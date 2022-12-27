@@ -76,10 +76,8 @@ public class AreaCheckServlet extends HttpServlet {
                 session.setAttribute("curtime", formatLocalTime);
                 session.setAttribute("exectime", executeTime);
                 session.setAttribute("hitres", resultString);
-
-                resp.sendRedirect(req.getContextPath() + "/result.jsp");
             }
-        } catch (NullPointerException | NumberFormatException | IOException e) {
+        } catch (NullPointerException | NumberFormatException e) {
             System.err.println("Отладка: ошибка");
             resp.setStatus(PROCESSING_ERROR_CODE);
         }
@@ -128,4 +126,16 @@ public class AreaCheckServlet extends HttpServlet {
         }
         return false;
     }
+
+//    private String generateRow(Point point) {
+//        NumberFormat nf = NumberFormat.getInstance();
+//        nf.setMaximumFractionDigits(3);
+//        return (point.isHit() ? "<tr class=\"hit-yes\">" : "<tr class=\"hit-no\">") +
+//                "<td>" + point.getX() + "</td>" +
+//                "<td>" + point.getY() + "</td>" +
+//                "<td>" + point.getR() + "</td>" +
+//                "<td>" + point.getCurrTime() + "</td>" +
+//                "<td>" + point.getExecTime() + "</td>" +
+//                "<td>" + (point.isHit() ? "<img src=\"img/tick.png\" alt=\"Да\" class=\"yes-no-marker\">" : "<img src=\"img/cross.png\" alt=\"Нет\" class=\"yes-no-marker\">") + "</td>";
+//    }
 }

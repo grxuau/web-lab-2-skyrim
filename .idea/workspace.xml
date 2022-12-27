@@ -10,11 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/radius/skrad1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/radius/skrad15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/radius/skrad2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/radius/skrad25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/radius/skrad3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/result.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/result.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/undertow-handlers.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/multimedia/Winterholdcollege.webp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/winterholdcollege.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/result.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/result.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/validator.js" afterDir="false" />
@@ -30,10 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="Class" />
         <option value="jsf" />
         <option value="Jsp File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -49,7 +57,10 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/result.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/result.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -67,7 +78,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.openapi.externalSystem.service.settings.ExternalSystemGroupConfigurable" value="ALL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DELETEIT/web_help" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.14941406" />
@@ -82,11 +93,11 @@
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia" />
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia\radius" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp" />
-      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\servlets" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF\pages" />
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia" />
+      <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\servlets" />
     </key>
   </component>
   <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
@@ -175,25 +186,27 @@
         </option>
       </method>
     </configuration>
-    <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/web-lab-2-1.0-SNAPSHOT/index.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration default="true" type="JBossConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
-      <server-settings />
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="" />
+        <option name="USERNAME" value="" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/web-lab-2-1.0-SNAPSHOT/index.jsp">
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JavaScript Debug.index.jsp" />
       <item itemvalue="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]" />
-      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
@@ -221,7 +234,8 @@
       <workItem from="1671544162220" duration="8492000" />
       <workItem from="1671605776653" duration="11837000" />
       <workItem from="1671687094437" duration="2787000" />
-      <workItem from="1671689950768" duration="54036000" />
+      <workItem from="1671689950768" duration="60516000" />
+      <workItem from="1672090723728" duration="5876000" />
     </task>
     <servers />
   </component>
