@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*можно ли сделать несколько одинаковых селекторов?*/
+/*fix avatar*/
 body {
+	font-family: Futura Family, serif;
 	background-size: cover;
 	background-image: url("/css/multimedia/riverwood-background.webp");
-
-	font-family: Futura Family, serif;
 }
 
 fieldset {
@@ -62,7 +62,6 @@ fieldset {
 
 .container-coord {
 	right: 500px;
-
 }
 
 .coordinate-plane {
@@ -77,6 +76,28 @@ fieldset {
 	display: inline;
 }
 
+.container-input {
+	font-size: large;
+
+	margin: 20px;
+}
+
 .radius-checkbox {
 
 }
+
+/*.help {*/
+/*	cursor: pointer;*/
+
+/*	position: absolute;*/
+
+/*	width: 64px;*/
+/*	height: 64px;*/
+/*}*/
+
+/*.help-button-icon {*/
+/*	position: absolute;*/
+
+/*	width: 64px;*/
+/*	height: 64px;*/
+/*}*/

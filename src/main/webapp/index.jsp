@@ -6,25 +6,11 @@
         <title>LAB2: CHESNOKOV P32111</title>
         <link href = "css/stylesheets/index.css" rel="stylesheet" type="text/css">
     </head>
-
     <style>
         body {
             font-family: Futura Family, serif;
             background-size: cover;
             background-image: url("css/multimedia/riverwood-background.webp");
-        }
-
-        .container-input {
-            font-size: large;
-
-            margin: 20px;
-        }
-
-        @font-face {
-            font-family: Futura Family;
-            font-weight: normal;
-
-            src: url("css/fonts/futurabookc.woff2") format("woff");
         }
     </style>
     <body>
@@ -99,6 +85,14 @@
                     <fieldset>
                         <button type="submit"> Fus Ro Dah! </button>
                         <button type="reset"> Krii Lun Aus! </button>
+                        <button class="help"> <img class="help-button-icon" src="css/multimedia/skooma.webp" alt="help button"></button>
+                        <div class = "help">
+                            <p>simple rules: don't use number systems instead of decimal, </p>
+                            <p>integers must not start from zero</p>
+                            <p>max input length is 12 symbols</p>
+                            <p><i>love yourself</i></p>
+
+                        </div>
                     </fieldset>
 <%--                    FIXME если нажать до отправки - будет ошибка --%>
                     <fieldset>
@@ -107,11 +101,16 @@
 
                 </form>
 
+                <div id="error">
+<%--                TODO add error messages--%>
+                </div>
+<%--                TODO заменить координатную плоскость--%>
                 <div class = "container-coord">
                     <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
                 </div>
 
                 <noscript>
+<%--                    TODO change class --%>
                     <div class="error">
 <%--                        fixme не перенаправляет--%>
                         <meta http-equiv="Refresh" content="0; url='/js-not-allowed.jsp'" />
@@ -123,5 +122,6 @@
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
-    <script defer src="scripts/validator.js"></script>
+    <script defer src="scripts/new-validator.js"></script>
+    <script defer src="scripts/help-button.js"></script>
     </html>

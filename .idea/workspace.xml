@@ -10,11 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skooma.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/help-button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/area/AreaChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,10 +84,10 @@
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia\radius" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp" />
       <recent name="C:\java_senior\web-lab-2\src\main\webapp\WEB-INF" />
-      <recent name="C:\java_senior\web-lab-2\src\main\webapp\css\multimedia" />
       <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\servlets" />
     </key>
   </component>
@@ -213,7 +213,7 @@
       <workItem from="1671687094437" duration="2787000" />
       <workItem from="1671689950768" duration="60516000" />
       <workItem from="1672090723728" duration="6789000" />
-      <workItem from="1672214033980" duration="8357000" />
+      <workItem from="1672214033980" duration="14317000" />
     </task>
     <servers />
   </component>

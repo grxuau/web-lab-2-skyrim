@@ -1,5 +1,6 @@
 $(document).ready(function () {
     const MAX_INPUT_LENGTH = 12;
+    const errorElement = document.getElementById('error')
 
     const patterns = {
         integerStartingWithZero: new RegExp("^0+\\d+$"),
@@ -11,6 +12,8 @@ $(document).ready(function () {
         yCoord: undefined,
         rCoord: undefined
     }
+
+    let messages = [];
 
     function isNumberBelongInterval(leftBorder, rightBorder, number) {
         return (number <= rightBorder && number >= leftBorder)
@@ -59,6 +62,25 @@ $(document).ready(function () {
                r.every(rElement => !patterns.numberSystemsPattern.test(rElement)) &&
                r.every(rElement => !patterns.integerStartingWithZero.test(rElement))
     }
+    //TODO make an attractive output
+    //TODO redesign function
+    function validate() {
+        if (!checkX()) {
+            messages.push('\'x\' value is incorrect')
+            return false
+        }
+        if (!checkY()) {
+            messages.push('\'y\' value is incorrect')
+            return false
+        }
+        if (!checkR()) {
+            messages.push('\'r\' value is incorrect')
+            return false
+        }
+
+        return true
+    }
+
 
     function getCheckedBoxes() {
         const checkedBoxes = document.querySelectorAll('input[name=rCoord]:checked')
@@ -100,11 +122,16 @@ $(document).ready(function () {
 
     let form = document.getElementById('input-coordinates')
     form.addEventListener('submit', (e) => {
+        //TODO make text which says how to fill form correctly
+        //TODO ask what's the correct message to show with incorrect input
+        //TODO make button 'need skuma' as a help button
         e.preventDefault()
 
-        if (checkX() && checkY() && checkR()) {
+        if (validate()) {
             setCoordinates()
             sendGetRequest()
+        } else {
+            errorElement.innerText = messages.join('!')
         }
     })
 })
