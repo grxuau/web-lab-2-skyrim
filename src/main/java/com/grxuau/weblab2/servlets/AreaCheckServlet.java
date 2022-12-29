@@ -15,11 +15,12 @@ import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 
-//TODO: добавить полную валидацию на случай отключения JavaScript'a!
+//TODO добавить полную валидацию на случай отключения JavaScript'a!
 public class AreaCheckServlet extends HttpServlet {
     static final short PROCESSING_ERROR_CODE = 418; //i'm teapot xd
     static final short VALIDATING_ERROR_CODE = 450; //there is no such code in MDN WEB DOCS
     //FIXME проверить, содержит ли запрос координаты точки
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         LocalDateTime localTime = LocalDateTime.now(ZoneOffset.UTC);
@@ -29,7 +30,6 @@ public class AreaCheckServlet extends HttpServlet {
         long startTime = System.currentTimeMillis();
 
         try {
-
 
             double x = Double.parseDouble(req.getParameter("x"));
             double y = Double.parseDouble(req.getParameter("y"));
@@ -54,15 +54,15 @@ public class AreaCheckServlet extends HttpServlet {
                     hitResults[checkNumber] = hit;
                     checkNumber++;
                 }
-
+                //заменить на конкатенацию строк, не позорься
                 StringBuilder resultString = new StringBuilder();
-                for (byte i = 0; i < hitResults.length; i++) {
+                for (int i = 0; i < hitResults.length; i++) {
                     resultString.append(r[i])
                                 .append("- ")
                                 .append(hitResults[i])
                                 .append(";");
                     if (i == hitResults.length - 1) {
-                        resultString.deleteCharAt(resultString.length()-1); //удаление ';'
+                        resultString.deleteCharAt(resultString.length() - 1); //удаление ';'
                     }
                 }
 
@@ -104,7 +104,7 @@ public class AreaCheckServlet extends HttpServlet {
     private boolean validateX(double x) {
         double[] allowedValues = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
 
-        for(double allowedValue: allowedValues) {
+        for (double allowedValue: allowedValues) {
             if (x == allowedValue) {
                 return true;
             }
@@ -119,23 +119,11 @@ public class AreaCheckServlet extends HttpServlet {
     private boolean validateR(double r) {
         double[] allowedValues = {1, 1.5, 2, 2.5, 3};
 
-        for(double allowedValue: allowedValues) {
+        for (double allowedValue: allowedValues) {
             if (r == allowedValue) {
                 return true;
             }
         }
         return false;
     }
-
-//    private String generateRow(Point point) {
-//        NumberFormat nf = NumberFormat.getInstance();
-//        nf.setMaximumFractionDigits(3);
-//        return (point.isHit() ? "<tr class=\"hit-yes\">" : "<tr class=\"hit-no\">") +
-//                "<td>" + point.getX() + "</td>" +
-//                "<td>" + point.getY() + "</td>" +
-//                "<td>" + point.getR() + "</td>" +
-//                "<td>" + point.getCurrTime() + "</td>" +
-//                "<td>" + point.getExecTime() + "</td>" +
-//                "<td>" + (point.isHit() ? "<img src=\"img/tick.png\" alt=\"Да\" class=\"yes-no-marker\">" : "<img src=\"img/cross.png\" alt=\"Нет\" class=\"yes-no-marker\">") + "</td>";
-//    }
 }

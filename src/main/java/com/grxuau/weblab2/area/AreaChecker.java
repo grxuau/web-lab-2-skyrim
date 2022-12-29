@@ -42,6 +42,4 @@ public class AreaChecker {
         double pixelRow = ((r - y) / (2 * r)) * heightPx;
         return (int) Math.round(pixelRow);
     }
-
-
 }
