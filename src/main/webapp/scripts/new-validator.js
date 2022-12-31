@@ -125,6 +125,8 @@ $(document).ready(function () {
         //TODO make text which says how to fill form correctly
         //TODO ask what's the correct message to show with incorrect input
         //TODO make button 'need skuma' as a help button
+        //FIXME error messages displays coords, also messages are incorrect
+        //FIXME you can spam error messages
         e.preventDefault()
 
         if (validate()) {

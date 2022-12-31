@@ -10,11 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/multimedia/skooma.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/scripts/help-button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServletV2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/js-not-allowed.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/js-not-allowed.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/help-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/help-button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,10 +31,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="jsf" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -74,7 +77,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14941406" />
     <property name="project.structure.side.proportion" value="0.6156502" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="io.unthrottled.amii.config.ui.PluginSettingsUI" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -213,7 +216,11 @@
       <workItem from="1671687094437" duration="2787000" />
       <workItem from="1671689950768" duration="60516000" />
       <workItem from="1672090723728" duration="6789000" />
-      <workItem from="1672214033980" duration="14317000" />
+      <workItem from="1672214033980" duration="15354000" />
+      <workItem from="1672384499624" duration="3713000" />
+      <workItem from="1672393739363" duration="6145000" />
+      <workItem from="1672421830025" duration="573000" />
+      <workItem from="1672503182351" duration="2148000" />
     </task>
     <servers />
   </component>

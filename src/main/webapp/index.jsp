@@ -85,14 +85,24 @@
                     <fieldset>
                         <button type="submit"> Fus Ro Dah! </button>
                         <button type="reset"> Krii Lun Aus! </button>
-                        <button class="help"> <img class="help-button-icon" src="css/multimedia/skooma.webp" alt="help button"></button>
-                        <div class = "help">
-                            <p>simple rules: don't use number systems instead of decimal, </p>
-                            <p>integers must not start from zero</p>
-                            <p>max input length is 12 symbols</p>
-                            <p><i>love yourself</i></p>
 
+                        <button data-modal-target= "#modal" class="help active">
+                            <img class="help-button-icon" src="css/multimedia/skooma.webp" alt="help button">
+                        </button>
+
+                        <div class = "help" id="help">
+                            <div class="help-header">
+                                <div class="help-title"> Need some skooma? </div>
+                                <button data-close-button class="help-close-button">&times;</button>
+                            </div>
+                            <div class="help-body">
+                                <p>simple rules: don't use number systems instead of decimal, </p>
+                                <p>integers must not start from zero</p>
+                                <p>max input length is 12 symbols</p>
+                                <p> <i>love yourself</i> </p>
+                            </div>
                         </div>
+                        <div class="active" id="overlay"></div>
                     </fieldset>
 <%--                    FIXME если нажать до отправки - будет ошибка --%>
                     <fieldset>

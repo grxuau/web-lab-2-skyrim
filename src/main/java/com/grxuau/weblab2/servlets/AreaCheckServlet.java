@@ -17,8 +17,8 @@ import java.time.format.DateTimeFormatter;
 
 //TODO добавить полную валидацию на случай отключения JavaScript'a!
 public class AreaCheckServlet extends HttpServlet {
-    static final short PROCESSING_ERROR_CODE = 418; //i'm teapot xd
-    static final short VALIDATING_ERROR_CODE = 450; //there is no such code in MDN WEB DOCS
+    static final short PROCESSING_ERROR_CODE = 418;
+    static final short VALIDATING_ERROR_CODE = 450;
     //FIXME проверить, содержит ли запрос координаты точки
 
     @Override
