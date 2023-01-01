@@ -32,7 +32,7 @@ public class CoordinateValidator {
 
     private String[] processR(String[] r) {
         for (int i = 0; i < r.length; i++) {
-            r[i] = r[i].trim()
+            r[i] = r[i].trim();
             r[i] = r[i].replace(',', '.');
         }
         return r;
