@@ -16,7 +16,7 @@ public class AreaCheckServletV2 extends HttpServlet {
             double x;
             double y;
             double[] r;
-
+            //FIXME first call CoordinateValidator, then SetCoords
             public void setCoords() {
                 double x = Double.parseDouble(req.getParameter("x"));
                 double y = Double.parseDouble(req.getParameter("y"));
