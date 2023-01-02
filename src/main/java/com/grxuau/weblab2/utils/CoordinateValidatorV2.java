@@ -5,9 +5,9 @@ public class CoordinateValidatorV2 {
     //FIXME invalid regex pattern
     final String numberStartingWithZero = "^0+\\d+$";
     //FIXME rename 'r' variable
-    private double x;
-    private double y;
-    private double[] r;
+    private final double x;
+    private final double y;
+    private final double[] r;
 
     public CoordinateValidatorV2(String x, String y, String[] r) throws NumberFormatException, InvalidInputException {
         if (checkInput(x, y, r)) {
@@ -25,7 +25,7 @@ public class CoordinateValidatorV2 {
         }
     }
 
-    public boolean validateX(double coordinate, double[] availableValues) {
+    public boolean validateX(double[] availableValues) {
         for (double availableValue: availableValues) {
             if (x == availableValue) {
                 return true;
