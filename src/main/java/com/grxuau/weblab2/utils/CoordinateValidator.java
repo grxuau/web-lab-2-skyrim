@@ -1,5 +1,7 @@
 package com.grxuau.weblab2.utils;
 
+import java.util.Arrays;
+
 public class CoordinateValidator {
     final int MAX_INPUT_LENGTH = 12;
 
@@ -20,6 +22,42 @@ public class CoordinateValidator {
         this.r = rCoord;
     }
 
+//    public boolean validateX(String[] availableValues) {
+//        if (isNumeric(x)) {
+//            return   isDecimal(x) &&
+//                     isCorrectLength(x) &&
+//                    !isStartedWithZero(x) &&
+//                     isBelongToInterval(availableValues, Double.parseDouble(x));
+//        } else {
+//            return false;
+//        }
+//    }
+
+    public boolean validateY(double leftBorder, double rightBorder) {
+        if (isNumeric(y)) {
+            return   isDecimal(y) &&
+                    isCorrectLength(y) &&
+                    !isStartedWithZero(y) &&
+                    isBelongToInterval(leftBorder, rightBorder, Double.parseDouble(x));
+        } else {
+            return false;
+        }
+    }
+
+    public boolean validateR(String[] availableValues) {
+        for (String rValue: r) {
+            boolean middleValidation = !isStartedWithZero(rValue) &&
+                    isCorrectLength(rValue) &&
+                    !isNumeric(rValue) &&
+                    isDecimal(rValue);
+            if (middleValidation) {
+                return false;
+            }
+        }
+
+        return Arrays.asList(availableValues).containsAll(Arrays.asList(r));
+    }
+
     private String[] processXY(String x, String y) {
         String processedX = x.trim();
         String processedY = y.trim();
@@ -38,47 +76,7 @@ public class CoordinateValidator {
         return r;
     }
 
-    public boolean validateX(double[] availableValues) {
-        if (isNumeric(x)) {
-            return   isDecimal(x) &&
-                     isCorrectLength(x) &&
-                    !isStartedWithZero(x) &&
-                     isBelongToInterval(availableValues, Double.parseDouble(x));
-        } else {
-            return false;
-        }
-    }
-
-    public boolean validateY(double leftBorder, double rightBorder) {
-        if (isNumeric(y)) {
-            return   isDecimal(y) &&
-                     isCorrectLength(y) &&
-                    !isStartedWithZero(y) &&
-                     isBelongToInterval(leftBorder, rightBorder, Double.parseDouble(x));
-        } else {
-            return false;
-        }
-    }
-
-//    public boolean validateR(double[] availableValues) {
-//        boolean valid;
-//
-//        for (String rValue: r) {
-//            if ()
-//        }
-//    }
-
-//    boolean validR;
-//        for (String rValue: r) {
-//        if (!isNumeric(rValue) || !isCorrectLength(rValue)) {
-//            validR = false;
-//            break;
-//        }
-//    }
-
-    //FIXME how to check r[]?
-    //TODO process coords in constructor
-    public boolean isStartedWithZero(String formInput) {
+    private boolean isStartedWithZero(String formInput) {
         return  formInput.matches(integerStartingWithZero);
     }
 
@@ -86,9 +84,7 @@ public class CoordinateValidator {
         return !formInput.matches(numberSystemsPattern);
     }
 
-
-
-    public boolean isNumeric(String formInput) {
+    private boolean isNumeric(String formInput) {
         try {
             Double.parseDouble(formInput);
             return true;
@@ -97,7 +93,7 @@ public class CoordinateValidator {
         }
     }
 
-    public boolean isBelongToInterval(double leftBorder, double rightBorder, double number) {
+    private boolean isBelongToInterval(double leftBorder, double rightBorder, double number) {
         try {
             return  (number >= leftBorder) &&
                     (number <= rightBorder);
@@ -106,7 +102,7 @@ public class CoordinateValidator {
         }
     }
 
-    public boolean isBelongToInterval(double[] avaliableValues, double number) {
+    private boolean isBelongToInterval(double[] avaliableValues, double number) {
         for (double value: avaliableValues) {
             if (number == value) {
                 return true;
@@ -115,7 +111,7 @@ public class CoordinateValidator {
         return false;
     }
 
-    public boolean isCorrectLength(String formInput) {
+    private boolean isCorrectLength(String formInput) {
         return  formInput.length() < MAX_INPUT_LENGTH;
     }
 }
