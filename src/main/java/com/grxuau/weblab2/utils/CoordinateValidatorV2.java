@@ -2,7 +2,8 @@ package com.grxuau.weblab2.utils;
 
 public class CoordinateValidatorV2 {
     final int MAX_INPUT_LENGTH = 12;
-    //FIXME invalid regex pattern
+    //TODO сделать для интерактивного элемента отдельный валидатор
+    //TODO проверить, не нулевой ли массив r[]
     final String numberStartingWithZero = "^0+\\d+$";
     //FIXME rename 'r' variable
     private final double x;
@@ -40,17 +41,17 @@ public class CoordinateValidatorV2 {
     }
 
     public boolean validateR(double[] availableValues) {
-        for (double radius: r) {
-            for (double availableValue: availableValues) {
-                if (radius == availableValue) {
+        int validatedVariables = 0;
+        for (int i = 0; i < r.length; i++) {
+            for (int j = 0; j < availableValues.length; j++) {
+                if (r[i] == availableValues[j]) {
+                    validatedVariables += 1;
                     break;
                 }
-
-                return false;
             }
         }
 
-        return true;
+        return validatedVariables == r.length;
     }
 
 
