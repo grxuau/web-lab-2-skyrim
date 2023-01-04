@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //покрыть тестами
     const MAX_INPUT_LENGTH = 12;
-    const errorElement = document.getElementById('error')
+    const errorElement = document.getElementById('error-message')
 
     const patterns = {
         integerStartingWithZero: new RegExp("^0+\\d+$"),
@@ -14,7 +14,7 @@ $(document).ready(function () {
         rCoord: undefined
     }
 
-    let messages = [];
+    let messages = []
 
     function isNumberBelongInterval(leftBorder, rightBorder, number) {
         return (number >= leftBorder && number <= rightBorder)
@@ -85,11 +85,10 @@ $(document).ready(function () {
 
     function getCheckedBoxes() {
         let checkedValues = []
-        const checkedBoxes = $('#input-coordinates input[type = "checkbox"]:checked')
-              .each(function () {
-                  checkedValues.push($(this).val())
-              })
-
+        $('#input-coordinates input[type = "checkbox"]:checked')
+            .each(function () {
+                checkedValues.push($(this).val())
+            });
         return (checkedValues.length > 0) ? checkedValues : null
     }
 
@@ -111,33 +110,35 @@ $(document).ready(function () {
         })
     }
 
+    function clearMessages() {
+        messages = []
+        errorElement.innerText = ""
+    }
+
     function sendGetRequest() {
         $.ajax({
-            url: 'controller-servlet',
+            url: 'check-servlet',
             method: 'GET',
             data: {
                 x: point.xCoord,
                 y: point.yCoord,
                 r: point.rCoord
             },
-            error: function(jqXHR, exception) {
-                //TODO add error's description
+            error: function() {
+                messages.push('an error occurred while submitting the form')
             }
         })
     }
 
     let form = document.getElementById('input-coordinates')
     form.addEventListener('submit', (e) => {
-        //TODO make text which says how to fill form correctly
-        //TODO ask what's the correct message to show with incorrect input
-        //TODO make button 'need skooma' as a help button
-        //FIXME error messages displays coords, also messages are incorrect
-        //FIXME you can spam error messages
         e.preventDefault()
+        clearMessages()
 
         if (validate()) {
             setCoordinates()
             sendGetRequest()
+
         } else {
             errorElement.innerText = messages.join('!')
         }

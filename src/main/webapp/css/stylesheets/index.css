@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/*можно ли сделать несколько одинаковых селекторов?*/
 /*fix avatar*/
 body {
 	font-family: Futura Family, serif;
@@ -71,7 +70,7 @@ fieldset {
 	height: 290px;
 
 	left: 500px;
-	bottom: 210px;
+	bottom: 245px;
 
 	display: inline;
 }
@@ -157,4 +156,9 @@ fieldset {
 	opacity: 1;
 
 	pointer-events: all;
+}
+
+#error-message {
+	width: 300px;
+	height: 100px;
 }

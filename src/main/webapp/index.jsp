@@ -103,25 +103,19 @@
                         </div>
                         <div class="active" id="overlay"></div>
                     </fieldset>
-<%--                    FIXME если нажать до отправки - будет ошибка --%>
                     <fieldset>
                         <a href="result.jsp">SPELL TOME: REANIMATE CORPSE</a>
                     </fieldset>
-
+                    <fieldset>
+                    <div id="error-message"></div>
+                    </fieldset>
                 </form>
-
-                <div id="error">
-<%--                TODO add error messages--%>
-                </div>
-<%--                TODO заменить координатную плоскость--%>
                 <div class = "container-coord">
                     <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
                 </div>
 
                 <noscript>
-<%--                    TODO change class --%>
                     <div class="error">
-<%--                        fixme не перенаправляет--%>
                         <meta http-equiv="Refresh" content="0; url='/js-not-allowed.jsp'" />
                     </div>
                 </noscript>
