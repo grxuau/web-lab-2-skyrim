@@ -2,128 +2,116 @@ package com.grxuau.weblab2.servlets;
 
 import com.grxuau.data.InputData;
 import com.grxuau.weblab2.area.AreaChecker;
+import com.grxuau.weblab2.utils.CoordinateValidator;
+import com.grxuau.weblab2.utils.InvalidInputException;
+import com.grxuau.weblab2.utils.TableRow;
+import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
-//TODO добавить полную валидацию на случай отключения JavaScript'a!
 public class AreaCheckServlet extends HttpServlet {
-    static final short PROCESSING_ERROR_CODE = 418;
-    static final short VALIDATING_ERROR_CODE = 450;
-    //FIXME проверить, содержит ли запрос координаты точки
+    final double[] availableX = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
+    final double[] availableR = {1, 1.5, 2, 2.5, 3};
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        LocalDateTime localTime = LocalDateTime.now(ZoneOffset.UTC);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String formatLocalTime = localTime.format(formatter);
-
-        long startTime = System.currentTimeMillis();
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String   x = req.getParameter("x");
+        String   y = req.getParameter("y");
+        String[] r = req.getParameterValues("r[]");
 
         try {
 
-            double x = Double.parseDouble(req.getParameter("x"));
-            double y = Double.parseDouble(req.getParameter("y"));
-            String[] r = req.getParameterValues("r[]");
+            CoordinateValidator validator = new CoordinateValidator(x, y, r);
 
-            for (String rElement: r) {
-                if (!validateR(Double.parseDouble(rElement))) {
-                    resp.setStatus(VALIDATING_ERROR_CODE);
-                }
+            boolean validX = validator.validateX(availableX);
+            boolean validY = validator.validateY(-5, 5);
+            boolean validR = validator.validateR(availableR);
+
+            if (validX && validY && validR) {
+                HttpSession httpSession = req.getSession();
+                LocalDateTime clientDate = parseDate(req.getParameter("clientDate"));
+                TableRow newRow = formNewTableRow(validator.getX(), validator.getY(), validator.getR(), clientDate);
+                List<TableRow> tableRows = sessionObjectToArrayList(httpSession.getAttribute("table"));
+                tableRows.add(newRow);
+                httpSession.setAttribute("table", tableRows);
+
+                resp.setStatus(HttpServletResponse.SC_OK);
+                resp.setContentType("application/json");
+                resp.setCharacterEncoding("UTF-8");
+                resp.getWriter().println(new JSONObject(newRow));
             }
+        } catch (InvalidInputException | NumberFormatException e) {
+            resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            resp.getWriter().println("Bad Request: read the requirements for input coordinates on the page");
+        }
+    }
 
-            boolean isValid = validateX(x) && validateY(y);
+    public TableRow formNewTableRow(double x, double y, double[] r, LocalDateTime clientDate) {
+        long currentTime = System.currentTimeMillis();
+        boolean[] hitResults = new boolean[r.length];
 
-            if (isValid) {
-                int checkNumber = 0;
-                boolean[] hitResults = new boolean[r.length];
+        for (int i = 0; i < r.length; i++) {
+            hitResults[i] = isHit(x, y, r[i]);
+        }
+        double scriptWorkingTime = System.currentTimeMillis() - currentTime;
+        String result = getResult(hitResults, r);
 
-                for (String rElement : r) {
-                    //TODO посмотреть цвет пикселя, чтобы удостовериться в правильности работа алгоса
-                    boolean hit = isHit(x, y, Double.parseDouble(rElement));
+        return new TableRow(x, y, r, result, clientDate, scriptWorkingTime);
+    }
 
-                    hitResults[checkNumber] = hit;
-                    checkNumber++;
-                }
-                //заменить на конкатенацию строк, не позорься
-                StringBuilder resultString = new StringBuilder();
-                for (int i = 0; i < hitResults.length; i++) {
-                    resultString.append(r[i])
-                                .append("- ")
-                                .append(hitResults[i])
-                                .append(";");
-                    if (i == hitResults.length - 1) {
-                        resultString.deleteCharAt(resultString.length() - 1); //удаление ';'
-                    }
-                }
-
-                long endTime = System.currentTimeMillis();
-                long executeTime = endTime - startTime;
-
-                HttpSession session = req.getSession();
-                session.setAttribute("x", x);
-                session.setAttribute("y", y);
-                session.setAttribute("r", r);
-                session.setAttribute("curtime", formatLocalTime);
-                session.setAttribute("exectime", executeTime);
-                session.setAttribute("hitres", resultString);
-            }
-        } catch (NullPointerException | NumberFormatException e) {
-            System.err.println("Отладка: ошибка");
-            resp.setStatus(PROCESSING_ERROR_CODE);
+    private List<TableRow> sessionObjectToArrayList(Object table) {
+        if (table instanceof Collection) {
+            return (List<TableRow>) table;
+        } else {
+            return new ArrayList<>();
         }
     }
 
     private boolean isHit(double x, double y, double r) {
-        //FIXME понять, как сделать путь короче
         String filePath = "C:\\java_senior\\web-lab-2\\src\\main\\java\\com\\grxuau\\weblab2\\skyrim.png";
         File image = new File(filePath);
         try {
-            BufferedImage bufferedImage = ImageIO.read(image);
-
-            AreaChecker areaChecker = new AreaChecker(bufferedImage);
-
-            InputData inputData = new InputData(x, y, r);
-
-            return areaChecker.checkHit(inputData);
+            AreaChecker areaChecker = new AreaChecker(ImageIO.read(image));
+            return areaChecker.checkHit(new InputData(x, y, r));
         } catch (IOException e) {
-            System.err.println("An error occurred while processing the bitmap image.");
             return false;
         }
     }
 
-    private boolean validateX(double x) {
-        double[] allowedValues = {-5, -4, -3, -2, -1, 0, 1, 2, 3};
-
-        for (double allowedValue: allowedValues) {
-            if (x == allowedValue) {
-                return true;
+    private String getResult(boolean[] hitResults, double[] r) {
+        StringBuilder resultString = new StringBuilder();
+        for (int i = 0; i < hitResults.length; i++) {
+            resultString.append(r[i])
+                    .append("- ")
+                    .append(hitResults[i])
+                    .append(";");
+            if (i == hitResults.length - 1) {
+                resultString.deleteCharAt(resultString.length() - 1); //удаление ';'
             }
         }
-        return false;
+
+        return resultString.toString();
     }
 
-    private boolean validateY(double y) {
-        return  y >= -5 && y <= 5;
-    }
-
-    private boolean validateR(double r) {
-        double[] allowedValues = {1, 1.5, 2, 2.5, 3};
-
-        for (double allowedValue: allowedValues) {
-            if (r == allowedValue) {
-                return true;
-            }
+    private LocalDateTime parseDate(String value) {
+        if (value == null) return null;
+        try {
+            return LocalDateTime.parse(value, DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss"));
+        } catch (DateTimeParseException e) {
+            return null;
         }
-        return false;
     }
 }

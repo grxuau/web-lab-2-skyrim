@@ -10,10 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/TableRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidatorV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidatorV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/Playground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/Playground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServletV2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidatorV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +54,6 @@
     <setting file="file://$PROJECT_DIR$/src/main/webapp/index.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/result.css" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="hkzkrl49" />
@@ -199,9 +202,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="Application.Playground" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JavaScript Debug.index.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +234,8 @@
       <workItem from="1672393739363" duration="6145000" />
       <workItem from="1672421830025" duration="573000" />
       <workItem from="1672503182351" duration="19868000" />
-      <workItem from="1672677721697" duration="12314000" />
+      <workItem from="1672677721697" duration="26087000" />
+      <workItem from="1672776670515" duration="3981000" />
     </task>
     <servers />
   </component>
@@ -262,19 +266,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/ControllerServlet.java</url>
           <line>22</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/Playground.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidatorV2.java</url>
-          <line>41</line>
-          <properties class="com.grxuau.weblab2.utils.CoordinateValidatorV2" method="validateR">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

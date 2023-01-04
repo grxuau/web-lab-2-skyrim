@@ -21,7 +21,7 @@
 
     <servlet-mapping>
         <servlet-name>AreaCheckServlet</servlet-name>
-        <url-pattern>/area-check-servlet</url-pattern>
+        <url-pattern>/check-servlet</url-pattern>
     </servlet-mapping>
 
 </web-app>

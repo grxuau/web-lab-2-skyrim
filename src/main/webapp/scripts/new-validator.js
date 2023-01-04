@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //покрыть тестами
     const MAX_INPUT_LENGTH = 12;
     const errorElement = document.getElementById('error')
 

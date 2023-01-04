@@ -1,16 +1,15 @@
 package com.grxuau.weblab2.utils;
 
-public class CoordinateValidatorV2 {
-    final int MAX_INPUT_LENGTH = 12;
-    //TODO сделать для интерактивного элемента отдельный валидатор
-    //TODO проверить, не нулевой ли массив r[]
-    final String numberStartingWithZero = "^0+\\d+$";
-    //FIXME rename 'r' variable
-    private final double x;
-    private final double y;
-    private final double[] r;
+public class CoordinateValidator {
+    private final int MAX_INPUT_LENGTH = 12;
 
-    public CoordinateValidatorV2(String x, String y, String[] r) throws NumberFormatException, InvalidInputException {
+    private final String numberStartingWithZero = "^0+\\d+$";
+
+    public final double x;
+    public final double y;
+    public final double[] r;
+
+    public CoordinateValidator(String x, String y, String[] r) throws NumberFormatException, InvalidInputException {
         if (checkInput(x, y, r)) {
             this.x = Double.parseDouble(x.replace(",", "."));
             this.y = Double.parseDouble(y.replace(",", "."));
@@ -24,6 +23,18 @@ public class CoordinateValidatorV2 {
         } else {
             throw new InvalidInputException("invalid input");
         }
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double[] getR() {
+        return r;
     }
 
     public boolean validateX(double[] availableValues) {
@@ -42,7 +53,7 @@ public class CoordinateValidatorV2 {
 
     public boolean validateR(double[] availableValues) {
         int validatedVariables = 0;
-        for (int i = 0; i < r.length; i++) {
+        for (int i = r.length - 1; i >= 0; i--) {
             for (int j = 0; j < availableValues.length; j++) {
                 if (r[i] == availableValues[j]) {
                     validatedVariables += 1;
@@ -54,11 +65,13 @@ public class CoordinateValidatorV2 {
         return validatedVariables == r.length;
     }
 
-
-
     private boolean checkInput(String x, String y, String[] r) {
         boolean validX = !x.matches(numberStartingWithZero) && x.length() <= MAX_INPUT_LENGTH;
         boolean validY = !y.matches(numberStartingWithZero) && x.length() <= MAX_INPUT_LENGTH;
+
+        if (r.length == 0) {
+            return false;
+        }
 
         boolean validR = true;
         for (String radius : r) {
