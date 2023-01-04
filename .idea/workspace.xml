@@ -10,14 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e05ab6-8cdf-4db7-ba6e-9f7f882198f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/TableRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_lab_2_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_lab_2_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/servlets/AreaCheckServletV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidatorV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grxuau/weblab2/utils/CoordinateValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/stylesheets/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/scripts/new-validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-lab-2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-lab-2.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +90,7 @@
       <recent name="C:\java_senior\web-lab-2\src\main\java\com\grxuau\weblab2\servlets" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Playground">
+  <component name="RunManager" selected="JBoss/WildFly Server.JBoss/WildFly 20.0.0.Final [8]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.grxuau.Main" />
       <module name="web-lab-2" />
@@ -202,8 +200,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="Application.Playground" />
+        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -235,7 +233,7 @@
       <workItem from="1672421830025" duration="573000" />
       <workItem from="1672503182351" duration="19868000" />
       <workItem from="1672677721697" duration="26087000" />
-      <workItem from="1672776670515" duration="3981000" />
+      <workItem from="1672776670515" duration="9751000" />
     </task>
     <servers />
   </component>

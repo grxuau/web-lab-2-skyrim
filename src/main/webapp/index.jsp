@@ -60,19 +60,19 @@
 
                     <fieldset>
                         <legend> Select 'R' </legend>
-                        <input type="checkbox" id="r1" name="rCoord" class="radius-checkbox" value="1">
+                        <input type="checkbox" id="r1" name="rCoord" value="1">
                         <label for="r1">1</label>
 
-                        <input type="checkbox" id="r1.5" name="rCoord" class="radius-checkbox" value="1.5">
+                        <input type="checkbox" id="r1.5" name="rCoord" value="1.5">
                         <label for="r1.5">1.5</label>
 
-                        <input type="checkbox" id="r2" name="rCoord" class="radius-checkbox" value="2">
+                        <input type="checkbox" id="r2" name="rCoord" value="2">
                         <label for="r2">2</label>
 
-                        <input type="checkbox" id="r2.5" name="rCoord" class="radius-checkbox" value="2.5">
+                        <input type="checkbox" id="r2.5" name="rCoord" value="2.5">
                         <label for="r2.5">2.5</label>
 
-                        <input type="checkbox" id="r3" name="rCoord" class="radius-checkbox" value="3">
+                        <input type="checkbox" id="r3" name="rCoord" value="3">
                         <label for="r3">3</label>
                     </fieldset>
 
@@ -89,7 +89,6 @@
                         <button data-modal-target= "#modal" class="help active">
                             <img class="help-button-icon" src="css/multimedia/skooma.webp" alt="help button">
                         </button>
-
                         <div class = "help" id="help">
                             <div class="help-header">
                                 <div class="help-title"> Need some skooma? </div>

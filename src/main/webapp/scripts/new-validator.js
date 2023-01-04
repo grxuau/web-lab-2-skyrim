@@ -8,7 +8,7 @@ $(document).ready(function () {
         numberSystemsPattern: new RegExp("(0x|0o|0b)\d*")
     }
 
-    let pointCoords = {
+    let point = {
         xCoord: undefined,
         yCoord: undefined,
         rCoord: undefined
@@ -17,7 +17,7 @@ $(document).ready(function () {
     let messages = [];
 
     function isNumberBelongInterval(leftBorder, rightBorder, number) {
-        return (number <= rightBorder && number >= leftBorder)
+        return (number >= leftBorder && number <= rightBorder)
     }
 
     function isNumberCorrectLength(number) {
@@ -30,26 +30,26 @@ $(document).ready(function () {
             .replace(',', '.')
             .trim()
 
-        return isNumberBelongInterval(-5, 3, x)
-               && Number.isInteger(x)
-               && isNumberCorrectLength(x)
+        return isNumberBelongInterval(-5, 3, parseFloat(x))
+               && Number.isInteger(parseFloat(x))
+               && isNumberCorrectLength(parseFloat(x))
                && !(patterns.numberSystemsPattern.test(x))
                && !(patterns.integerStartingWithZero.test(x))
     }
 
     function checkY() {
-        const y = document.querySelector('input[name="yCoord"]:checked')
+        const y = document.getElementById('yCoord')
             .value
             .replace(',', '.')
             .trim()
 
         return isNumberBelongInterval(-5, 3, y)
-            && Number.isInteger(y)
-            && isNumberCorrectLength(y)
+            && Number.isInteger(parseFloat(y))
+            && isNumberCorrectLength(parseFloat(y))
             && !(patterns.numberSystemsPattern.test(y))
             && !(patterns.integerStartingWithZero.test(y))
     }
-
+    //fixme probably need to insert parseFloat() here
     function checkR() {
         const avaliableValues = ['1', '1.5', '2', '2.5', '3']
         const r = getCheckedBoxes();
@@ -84,23 +84,28 @@ $(document).ready(function () {
 
 
     function getCheckedBoxes() {
-        const checkedBoxes = document.querySelectorAll('input[name=rCoord]:checked')
-        return (checkedBoxes.length > 0) ? checkedBoxes : null
+        let checkedValues = []
+        const checkedBoxes = $('#input-coordinates input[type = "checkbox"]:checked')
+              .each(function () {
+                  checkedValues.push($(this).val())
+              })
+
+        return (checkedValues.length > 0) ? checkedValues : null
     }
 
     function setCoordinates() {
-        pointCoords.xCoord = document.querySelector('input[name="xCoord"]:checked')
-            .value
-            .replace(',', '.')
-            .trim()
+        point.xCoord = document.querySelector('input[name="xCoord"]:checked')
+             .value
+             .replace(',', '.')
+             .trim()
 
-        pointCoords.yCoord = document.querySelector('input[name="yCoord"]:checked')
-            .value
-            .replace(',', '.')
-            .trim()
+        point.yCoord =  document.getElementById('yCoord')
+             .value
+             .replace(',', '.')
+             .trim()
 
-        pointCoords.rCoord = getCheckedBoxes()
-        pointCoords.rCoord.forEach(function (rElement) {
+        point.rCoord = getCheckedBoxes()
+        point.rCoord.forEach(function (rElement) {
             rElement.toString()
                 .replace(',', '.')
         })
@@ -111,9 +116,9 @@ $(document).ready(function () {
             url: 'controller-servlet',
             method: 'GET',
             data: {
-                x: pointCoords.xCoord,
-                y: pointCoords.yCoord,
-                r: pointCoords.rCoord
+                x: point.xCoord,
+                y: point.yCoord,
+                r: point.rCoord
             },
             error: function(jqXHR, exception) {
                 //TODO add error's description
@@ -125,7 +130,7 @@ $(document).ready(function () {
     form.addEventListener('submit', (e) => {
         //TODO make text which says how to fill form correctly
         //TODO ask what's the correct message to show with incorrect input
-        //TODO make button 'need skuma' as a help button
+        //TODO make button 'need skooma' as a help button
         //FIXME error messages displays coords, also messages are incorrect
         //FIXME you can spam error messages
         e.preventDefault()
