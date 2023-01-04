@@ -23,5 +23,4 @@
         <servlet-name>AreaCheckServlet</servlet-name>
         <url-pattern>/check-servlet</url-pattern>
     </servlet-mapping>
-
 </web-app>

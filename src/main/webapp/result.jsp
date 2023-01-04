@@ -1,34 +1,49 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.grxuau.weblab2.utils.TableRow" %>
+
+<% ArrayList<TableRow> table;
+    Object attribute = request.getSession().getServletContext().getAttribute("table");
+    if(attribute != null){
+        table = (ArrayList<TableRow>) attribute;
+    } else {table = new ArrayList<>();}
+%>
 <!DOCTYPE html>
 <head>
-    <%--FIXME не находит фоновое изображение--%>
     <meta charset="UTF-8">
     <title>Result Table</title>
-    <link href = "result.css" rel="stylesheet" type="text/css">
+    <link href = "css/stylesheets/result.css" rel="stylesheet" type="text/css">
+        <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
     <div>
-        <table class="result-table">
+        <table id="result-table">
             <caption>Result Table</caption>
-            <tr>
-                <th>x</th>
-                <th>y</th>
-                <th>r</th>
-                <th>curtime</th>
-                <th>exectime</th>
-                <th>hitres</th>
-            </tr>
-            <tr>
-                <th><%= session.getAttribute("x")           .toString() %></th>
-                <th><%= session.getAttribute("y")           .toString() %></th>
-                <th><%= session.getAttribute("r")           .toString() %></th>
-                <th><%= session.getAttribute("curtime")     .toString() %></th>
-                <th><%= session.getAttribute("exectime")    .toString() %></th>
-                <th><%= session.getAttribute("hitres")      .toString() %></th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>x</th>
+                    <th>y</th>
+                    <th>r</th>
+                    <th>hitres</th>
+                    <th>curtime</th>
+                    <th>exectime</th>
+                </tr>
+            </thead>
+            <tbody>
+            <c:if test="${table!=null}">
+                <c:forEach items="${table}" var="tableRow">
+                <tr>
+                    <td>${tableRow.getX()}</td>
+                    <td>${tableRow.getY()}</td>
+                    <td>${tableRow.getR()}</td>
+                    <td>${tableRow.getHitResult()}</td>
+                    <td>${tableRow.getClientDate()}</td>
+                    <td>${tableRow.getScriptWorkingTime()}</td>
+                </tr>
+                </c:forEach>
+            </c:if>
+            </tbody>
         </table>
     </div>
     <a href="index.jsp"> Wuld Nah Kest! </a>
-
 </body>
-

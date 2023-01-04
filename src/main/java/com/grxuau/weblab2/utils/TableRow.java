@@ -30,4 +30,16 @@ public class TableRow {
     public double[] getR() {
         return r;
     }
+
+    public String getHitResult() {
+        return hitResult;
+    }
+
+    public LocalDateTime getClientDate() {
+        return clientDate;
+    }
+
+    public double getScriptWorkingTime() {
+        return scriptWorkingTime;
+    }
 }

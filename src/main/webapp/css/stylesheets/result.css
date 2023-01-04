@@ -1,5 +1,5 @@
 body {
-    background-image: url("/css/multimedia/winterholdcollege.webp");
+    background-image: url("../../css/multimedia/winterholdcollege.webp");
     background-size: cover;
 }
 
@@ -10,7 +10,6 @@ body {
     margin-left:  auto;
 }
 
-.result-table {
+#result-table {
     border: 3px #2c070b;
-
 }

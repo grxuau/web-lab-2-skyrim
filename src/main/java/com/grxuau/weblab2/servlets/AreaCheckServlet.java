@@ -5,10 +5,8 @@ import com.grxuau.weblab2.area.AreaChecker;
 import com.grxuau.weblab2.utils.CoordinateValidator;
 import com.grxuau.weblab2.utils.InvalidInputException;
 import com.grxuau.weblab2.utils.TableRow;
-import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +14,6 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -27,13 +23,13 @@ public class AreaCheckServlet extends HttpServlet {
     final double[] availableR = {1, 1.5, 2, 2.5, 3};
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String   x = req.getParameter("x");
-        String   y = req.getParameter("y");
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String x = req.getParameter("x");
+        String y = req.getParameter("y");
         String[] r = req.getParameterValues("r[]");
 
         try {
-
+            //TODO add LocalDateTime parser
             CoordinateValidator validator = new CoordinateValidator(x, y, r);
 
             boolean validX = validator.validateX(availableX);
@@ -42,27 +38,25 @@ public class AreaCheckServlet extends HttpServlet {
 
             if (validX && validY && validR) {
                 HttpSession httpSession = req.getSession();
-                LocalDateTime clientDate = parseDate(req.getParameter("clientDate"));
+                LocalDateTime clientDate = LocalDateTime.now();
                 TableRow newRow = formNewTableRow(validator.getX(), validator.getY(), validator.getR(), clientDate);
                 List<TableRow> tableRows = sessionObjectToArrayList(httpSession.getAttribute("table"));
                 tableRows.add(newRow);
                 httpSession.setAttribute("table", tableRows);
 
                 resp.setStatus(HttpServletResponse.SC_OK);
-                resp.setContentType("application/json");
                 resp.setCharacterEncoding("UTF-8");
-                resp.getWriter().println(new JSONObject(newRow));
             }
         } catch (InvalidInputException | NumberFormatException e) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-            resp.getWriter().println("Bad Request: read the requirements for input coordinates on the page");
+            resp.getWriter().println("Bad Request: invalid input");
         }
     }
 
     public TableRow formNewTableRow(double x, double y, double[] r, LocalDateTime clientDate) {
-        long currentTime = System.currentTimeMillis();
         boolean[] hitResults = new boolean[r.length];
 
+        long currentTime = System.currentTimeMillis();
         for (int i = 0; i < r.length; i++) {
             hitResults[i] = isHit(x, y, r[i]);
         }
@@ -104,14 +98,5 @@ public class AreaCheckServlet extends HttpServlet {
         }
 
         return resultString.toString();
-    }
-
-    private LocalDateTime parseDate(String value) {
-        if (value == null) return null;
-        try {
-            return LocalDateTime.parse(value, DateTimeFormatter.ofPattern("dd.MM.yyyy, HH:mm:ss"));
-        } catch (DateTimeParseException e) {
-            return null;
-        }
     }
 }

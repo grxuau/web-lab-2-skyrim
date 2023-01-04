@@ -5,31 +5,32 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.Writer;
 
 public class ControllerServlet extends HttpServlet {
-    final static int BAD_REQUEST = 400;
 
-    //boolean isPost = "POST".equals(request.getMethod());
-    //прописать post-запрос
-    //TODO что происходит при повторном запросе?
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getMethod().equals("GET")) {
+            doGet(req, resp);
+        } else {
+            getServletContext().getRequestDispatcher("/error-404").forward(req, resp);
+        }
+    }
+    //FIXME сделать валидацию чекбоксов на JS
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         try {
-            Double x = Double.parseDouble(req.getParameter("x"));
-            Double y = Double.parseDouble(req.getParameter("y"));
+            String x = req.getParameter("x");
+            String y = req.getParameter("y");
             String[] r = req.getParameterValues("r[]");
 
-            if ((r.length >= 1) && ("GET".equals(req.getMethod()))) {
+            if (r.length >= 1 && x != null && r != null) {
                 req.getRequestDispatcher("/check-servlet").forward(req, resp);
             } else {
-                resp.setStatus(400);
+                getServletContext().getRequestDispatcher("/error-404").forward(req, resp);
             }
-
-        } catch (NullPointerException | NumberFormatException e) {
-            Writer writer = resp.getWriter();
-            writer.write("ОШИБКА");
-            resp.setStatus(BAD_REQUEST);
+        } catch (NullPointerException | NumberFormatException | ServletException e) {
+            getServletContext().getRequestDispatcher("/error-404").forward(req, resp);
         }
     }
 }
