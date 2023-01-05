@@ -4,7 +4,7 @@
 body {
 	font-family: Futura Family, serif;
 	background-size: cover;
-	background-image: url("/css/multimedia/riverwood-background.webp");
+	background-image: url("../../css/multimedia/riverwood-background.webp");
 }
 
 fieldset {
@@ -161,4 +161,11 @@ fieldset {
 #error-message {
 	width: 300px;
 	height: 100px;
+}
+
+@font-face {
+	font-family: "Futura Family";
+	src: url("../../css/fonts/futurabookc.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }

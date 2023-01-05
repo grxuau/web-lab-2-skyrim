@@ -6,13 +6,6 @@
         <title>LAB2: CHESNOKOV P32111</title>
         <link href = "css/stylesheets/index.css" rel="stylesheet" type="text/css">
     </head>
-    <style>
-        body {
-            font-family: Futura Family, serif;
-            background-size: cover;
-            background-image: url("css/multimedia/riverwood-background.webp");
-        }
-    </style>
     <body>
         <header class="header-block">
             <img class = "avatar" src = "css/multimedia/skyrim-avatar.jpg" alt = "avatar">

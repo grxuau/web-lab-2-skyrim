@@ -3,13 +3,14 @@ body {
     background-size: cover;
 }
 
-.container {
-    position: absolute;
+.result-table {
+    border: solid 3px #072756;
 
+    margin-left: auto;
     margin-right: auto;
-    margin-left:  auto;
 }
 
-#result-table {
-    border: 3px #2c070b;
+.link-to-main-page {
+    margin-left: auto;
+    margin-right: auto;
 }

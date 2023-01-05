@@ -16,8 +16,7 @@
         <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
-    <div>
-        <table id="result-table">
+        <table class="result-table">
             <caption>Result Table</caption>
             <thead>
                 <tr>
@@ -44,6 +43,5 @@
             </c:if>
             </tbody>
         </table>
-    </div>
-    <a href="index.jsp"> Wuld Nah Kest! </a>
+        <div class="link-to-main-page"><a href="index.jsp"> Wuld Nah Kest! </a></div>
 </body>
