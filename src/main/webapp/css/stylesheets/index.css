@@ -59,10 +59,6 @@ fieldset {
 	position: relative;
 }
 
-.container-coord {
-	right: 25px;
-}
-
 .coordinate-plane {
 	position: relative;
 
@@ -70,7 +66,7 @@ fieldset {
 	height: 290px;
 
 	left: 500px;
-	bottom: 245px;
+	bottom: 390px;
 
 	display: inline;
 }

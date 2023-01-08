@@ -91,9 +91,7 @@
                         <meta http-equiv="Refresh" content="0; url='./jsnotfound.html'" />
                 </noscript>
             </div>
-            <div class = "container-coord">
-                <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
-            </div>
+            <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
