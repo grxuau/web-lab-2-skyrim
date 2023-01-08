@@ -17,7 +17,7 @@
 </head>
 <body>
         <table class="result-table">
-            <caption>Result Table</caption>
+            <caption class="result-table-header">Result Table</caption>
             <thead>
                 <tr>
                     <th>x</th>

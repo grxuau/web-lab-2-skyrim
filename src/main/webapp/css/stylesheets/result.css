@@ -1,16 +1,56 @@
 body {
     background-image: url("../../css/multimedia/winterholdcollege.webp");
     background-size: cover;
+
+    font-family: Futura Family, serif;
+}
+
+.result-table-header {
+    font-weight: bold;
+    font-size: large;
 }
 
 .result-table {
-    border: solid 3px #072756;
-
     margin-left: auto;
     margin-right: auto;
+
+    margin-top: 75px;
+
+    border-collapse: collapse;
+}
+
+.result-table thead tr {
+    background-color: #3D59AB;
+    color: antiquewhite;
+    text-align: left;
+    font-weight: bold;
+
+    border: 0.5px solid black;
+}
+
+.result-table th  {
+    padding: 2px 15px;
+    border: 0.5px solid black;
+}
+
+td {
+    border: 0.5px solid black;
 }
 
 .link-to-main-page {
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    top: 20px;
+
+    text-align: center;
+    min-width: 400px;
+
+    font-size: 0.9em;
+
+}
+
+@font-face {
+    font-family: "Futura Family";
+    src: url("../../css/fonts/futurabookc.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }

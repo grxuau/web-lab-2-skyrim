@@ -78,23 +78,6 @@
                     <fieldset>
                         <button type="submit"> Fus Ro Dah! </button>
                         <button type="reset"> Krii Lun Aus! </button>
-
-                        <button data-modal-target= "#modal" class="help active">
-                            <img class="help-button-icon" src="css/multimedia/skooma.webp" alt="help button">
-                        </button>
-                        <div class = "help" id="help">
-                            <div class="help-header">
-                                <div class="help-title"> Need some skooma? </div>
-                                <button data-close-button class="help-close-button">&times;</button>
-                            </div>
-                            <div class="help-body">
-                                <p>simple rules: don't use number systems instead of decimal, </p>
-                                <p>integers must not start from zero</p>
-                                <p>max input length is 12 symbols</p>
-                                <p> <i>love yourself</i> </p>
-                            </div>
-                        </div>
-                        <div class="active" id="overlay"></div>
                     </fieldset>
                     <fieldset>
                         <a href="result.jsp">SPELL TOME: REANIMATE CORPSE</a>
@@ -103,21 +86,16 @@
                     <div id="error-message"></div>
                     </fieldset>
                 </form>
-                <div class = "container-coord">
-                    <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
-                </div>
 
                 <noscript>
-                    <div class="error">
-                        <meta http-equiv="Refresh" content="0; url='/js-not-allowed.jsp'" />
-                    </div>
+                        <meta http-equiv="Refresh" content="0; url='./jsnotfound.html'" />
                 </noscript>
             </div>
-
-
+            <div class = "container-coord">
+                <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
+            </div>
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
     <script defer src="scripts/new-validator.js"></script>
-    <script defer src="scripts/help-button.js"></script>
     </html>

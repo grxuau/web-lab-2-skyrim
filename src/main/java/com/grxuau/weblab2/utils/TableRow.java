@@ -1,6 +1,7 @@
 package com.grxuau.weblab2.utils;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class TableRow {
     private final double x;
@@ -27,16 +28,26 @@ public class TableRow {
         return y;
     }
 
-    public double[] getR() {
-        return r;
+    public String getR() {
+        StringBuilder rString = new StringBuilder();
+        for (int i = 0; i < r.length; i ++) {
+            if (i == r.length - 1) {
+                rString.append(r[i]);
+            } else {
+                rString.append(r[i] + ", ");
+            }
+        }
+        return rString.toString();
     }
 
     public String getHitResult() {
         return hitResult;
     }
 
-    public LocalDateTime getClientDate() {
-        return clientDate;
+    public String getClientDate() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String formattedClientTime = clientDate.format(formatter);
+        return formattedClientTime;
     }
 
     public double getScriptWorkingTime() {
