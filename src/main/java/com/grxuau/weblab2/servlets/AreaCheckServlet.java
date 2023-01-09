@@ -29,7 +29,6 @@ public class AreaCheckServlet extends HttpServlet {
         String[] r = req.getParameterValues("r[]");
 
         try {
-            //TODO add LocalDateTime parser
             CoordinateValidator validator = new CoordinateValidator(x, y, r);
 
             boolean validX = validator.validateX(availableX);

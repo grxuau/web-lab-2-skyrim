@@ -91,9 +91,10 @@
                         <meta http-equiv="Refresh" content="0; url='./jsnotfound.html'" />
                 </noscript>
             </div>
+<%--            FIXME add coorect coordinate pla--%>
             <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
-    <script defer src="scripts/new-validator.js"></script>
+    <script defer src="scripts/validator.js"></script>
     </html>

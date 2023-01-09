@@ -18,7 +18,7 @@
 <body>
         <table class="result-table">
             <caption class="result-table-header">Result Table</caption>
-            <thead>
+            <thead style="position: sticky">
                 <tr>
                     <th>x</th>
                     <th>y</th>
