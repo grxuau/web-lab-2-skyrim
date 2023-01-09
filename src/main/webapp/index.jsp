@@ -92,8 +92,12 @@
             </div>
             <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
             <img class="skyrim-radius-r1" src="css/multimedia/skyrim-radius.png" alt="radius = 1">
+            <img class="skyrim-radius-r15" src="css/multimedia/skyrim-radius.png" alt="radius = 1.5">
+            <img class="skyrim-radius-r2" src="css/multimedia/skyrim-radius.png" alt="radius = 2">
+            <img class="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 2.5">
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
     <script defer src="scripts/validator.js"></script>
+    <script defer src="scripts/radius-setter.js"></script>
     </html>

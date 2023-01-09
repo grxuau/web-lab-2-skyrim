@@ -79,10 +79,57 @@ fieldset {
 
 .skyrim-radius-r1 {
 	position: absolute;
+
 	width: 117px;
-	height: 117px;
-	bottom: 205.7px;
+	height: 135.5px;
+	bottom: 198.2px;
 	left: 691.5px;
+
+	display: none;
+}
+
+.skyrim-radius-r15 {
+	position: absolute;
+
+	width: 180px;
+	height: 205px;
+	bottom: 172px;
+	left: 660.1px;
+
+	display: none;
+}
+
+.skyrim-radius-r2 {
+	position: absolute;
+
+	width: 236px;
+	height: 270px;
+	bottom: 147px;
+	left: 632px;
+
+	display: none;
+}
+
+.skyrim-radius-r25 {
+	position: absolute;
+
+	width: 300px;
+	height: 340px;
+	bottom: 120px;
+	left: 600px;
+
+	display: none;
+}
+
+.skyrim-radius-r3 {
+	position: absolute;
+
+	width: 356px;
+	height: 408.8px;
+	bottom: 94.5px;
+	left: 572px;
+
+	display: none;
 }
 
 #error-message {
