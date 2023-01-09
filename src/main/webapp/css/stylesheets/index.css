@@ -60,13 +60,13 @@ fieldset {
 }
 
 .coordinate-plane {
-	position: relative;
+	position: absolute;
 
-	width: 400px;
-	height: 290px;
+	width: 300px;
+	height: 360px;
 
-	left: 500px;
-	bottom: 390px;
+	left: 600px;
+	bottom: 70px;
 
 	display: inline;
 }

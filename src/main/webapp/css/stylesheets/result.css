@@ -17,9 +17,6 @@ body {
     margin-top: 75px;
 
     border-collapse: collapse;
-
-    max-height: 200px;
-    overflow-y: scroll;
 }
 
 .result-table thead tr {
@@ -36,11 +33,8 @@ body {
     border: 0.5px solid black;
 }
 
-.result-table td {
+td {
     border: 0.5px solid black;
-
-    max-height: 350px;
-    overflow-y: scroll;
 }
 
 .link-to-main-page {
