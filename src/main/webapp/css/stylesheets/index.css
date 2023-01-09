@@ -77,6 +77,14 @@ fieldset {
 	margin: 20px;
 }
 
+.skyrim-radius-r1 {
+	position: absolute;
+	width: 117px;
+	height: 117px;
+	bottom: 205.7px;
+	left: 691.5px;
+}
+
 #error-message {
 	width: 300px;
 	height: 100px;

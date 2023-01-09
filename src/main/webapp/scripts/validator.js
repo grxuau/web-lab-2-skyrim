@@ -1,175 +1,146 @@
 $(document).ready(function () {
-    const MAX_LENGTH = 12;
-    //ПОМЕНЯТЬ АЛЕРТЫ НА НОРМАЛЬНОЕ СООБЩЕНИЕ ОБ ОШИБКЕ
-    let pointCoords = {
+    //покрыть тестами
+    const MAX_INPUT_LENGTH = 12;
+    const errorElement = document.getElementById('error-message')
+
+    const patterns = {
+        integerStartingWithZero: new RegExp("^0+\\d+$"),
+        numberSystemsPattern: new RegExp("(0x|0o|0b)\d*")
+    }
+    //fixme update regex
+    let point = {
         xCoord: undefined,
         yCoord: undefined,
-        rCoord: undefined,
-
-        isValid: false
-    };
-
-    //GOVNOCODE
-    //FIXME удостовериться, что проверки работают так как задуманно
-    function validate() {
-        check_x()
-        if (pointCoords.isValid == false) {
-            return
-        }
-        check_y()
-        if (pointCoords.isValid == false) {
-            return
-        }
-        check_r()
-        if (pointCoords.isValid == false) {
-            return false
-        }
+        rCoord: undefined
     }
-    
-    function check_y() {
-        const startsWithZero = new RegExp("^0+\\d+$");
-        const numberSystems = new RegExp("(0x|0o|0b)\d*")
 
+    let messages = []
 
-        const yElement = document.getElementById('yCoord')
+    function isNumberBelongInterval(leftBorder, rightBorder, number) {
+        return (number >= leftBorder && number <= rightBorder)
+    }
+
+    function isNumberCorrectLength(number) {
+        return number.length <= MAX_INPUT_LENGTH && number.length > 0
+    }
+
+    function checkX() {
+        const x = document.querySelector('input[name="xCoord"]:checked')
             .value
             .replace(',', '.')
             .trim()
 
-
-        if (yElement.length > MAX_LENGTH) {
-            alert('Input is too long! Max length: ' + MAX_LENGTH)
-            pointCoords.isValid = false
-        } else if (isNaN(yElement) || isNaN(parseFloat(yElement))) {
-            alert('Invalid input!')
-            pointCoords.isValid = false
-        } else if (startsWithZero.test(yElement)){
-            alert('Number cannot starts with zero!')
-            pointCoords.isValid = false;
-        } else if (numberSystems.test(yElement)) {
-            alert("You can only enter numbers in decimal notation!");
-            pointCoords.isValid = false;
-        } else if (parseFloat(yElement) < -5 || parseFloat(yElement) > 5) {
-            alert('Please enter a number between -5 and 5')
-            pointCoords.isValid = false;
-        } else {
-            pointCoords.yCoord = yElement
-            pointCoords.isValid = true;
-        }
+        return isNumberBelongInterval(-5, 3, parseFloat(x))
+               && Number.isInteger(parseFloat(x))
+               && isNumberCorrectLength(x)
+               && !(patterns.numberSystemsPattern.test(x))
+               && !(patterns.integerStartingWithZero.test(x))
     }
 
-    function check_x() {
-        const startsWithZero = new RegExp("^0+\\d+$");
-        const numberSystems = new RegExp("(0x|0o|0b)\d*")
-
-        let availableValues = ['-5', '-4', '-3', '-2', '-1', '0', '1', '2', '3']
-
-        const xElement = document.querySelector('input[name="xCoord"]:checked')
+    function checkY() {
+        const y = document.getElementById('yCoord')
             .value
             .replace(',', '.')
-            .trim()
+            .replace(/\s/g,'')
 
-        if (xElement.length > MAX_LENGTH) {
-            alert('Input is too long! Max length: ' + MAX_LENGTH)
-            pointCoords.isValid = false
-        } else if (isNaN(xElement) || isNaN(parseFloat(xElement))) {
-            alert('Invalid input!')
-            pointCoords.isValid = false
-        } else if (startsWithZero.test(xElement)) {
-            alert('There must be no zeros at the beginning of an integer!\n')
-            pointCoords.isValid = false
-        } else if (numberSystems.test(xElement)) {
-            alert('Use decimal, warrior!')
-            pointCoords.isValid = false
-        }
-
-        availableValues.forEach(function (avalValue) {
-            if (xElement === avalValue) {
-                pointCoords.xCoord = xElement
-                pointCoords.isValid = true
-            }
-        })
+        return isNumberBelongInterval(-5, 3, parseFloat(y))
+            && !isNaN(y)
+            && isNumberCorrectLength(y)
+            && !(patterns.numberSystemsPattern.test(y))
+            && !(patterns.integerStartingWithZero.test(y))
     }
-
-    //FIXME: сделать функцию проверок красивой
-    function check_r() {
-        const startsWithZero = new RegExp("^0+\\d+$");
-        const numberSystems = new RegExp("(0x|0o|0b)\d*")
-
-        let availableValues = ['1', '1.5', '2', '2.5', '3']
-
-
-        const rElements = get_checked_boxes("rCoord");
-        let r = rElements.trim().split(" ")
+    //fixme probably need to insert parseFloat() here
+    function checkR() {
+        const avaliableValues = ['1', '1.5', '2', '2.5', '3']
+        const r = getCheckedBoxes();
 
         r.forEach(function (rElement) {
-            rElement.replace(',', '.')
-                    .trim()
+            rElement.toString()
+                    .replace(',', '.')
         })
 
-        r.every(function (rElement) {
-            if (startsWithZero.test(rElement)) {
-                alert('There must be no zeros at the beginning of an integer!\n')
-                pointCoords.isValid = false
-                return false
-            } else if (numberSystems.test(rElement)) {
-                alert('Use decimal, warrior')
-                pointCoords.isValid = false
-                return false
-            } else {
-                pointCoords.isValid = true
-            }
-        })
-
-        //FIXME: переписать проходы под every()
-
-        pointCoords.isValid = r.every(rElement => availableValues.includes(rElement))
-
-        if (pointCoords.isValid) {
-            pointCoords.rCoord = r
+        return r.every(rElement => avaliableValues.includes(rElement)) &&
+               r.every(rElement => !patterns.numberSystemsPattern.test(rElement)) &&
+               r.every(rElement => !patterns.integerStartingWithZero.test(rElement))
+    }
+    //TODO make an attractive output
+    //TODO redesign function
+    function validate() {
+        if (!checkX()) {
+            messages.push('\'x\' value is incorrect')
+            return false
         }
+        if (!checkY()) {
+            messages.push('\'y\' value is incorrect')
+            return false
+        }
+        if (!checkR()) {
+            messages.push('\'r\' value is incorrect')
+            return false
+        }
+
+        return true
     }
 
 
-    function get_checked_boxes(checkboxName) {
-        let checkboxes = document.getElementsByName(checkboxName)
-
-        let result = ""
-
-        for (let i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].checked) {
-                result += checkboxes[i].value + " "
-            }
-        }
-        // return checkboxesChecked.length > 0 ? checkboxesChecked : null;
-        return result
+    function getCheckedBoxes() {
+        let checkedValues = []
+        $('#input-coordinates input[type = "checkbox"]:checked')
+            .each(function () {
+                checkedValues.push($(this).val())
+            });
+        return (checkedValues.length > 0) ? checkedValues : null
     }
 
+    function setCoordinates() {
+        point.xCoord = document.querySelector('input[name="xCoord"]:checked')
+             .value
+             .replace(',', '.')
+             .trim()
+
+        point.yCoord =  document.getElementById('yCoord')
+             .value
+             .replace(',', '.')
+             .trim()
+
+        point.rCoord = getCheckedBoxes()
+        point.rCoord.forEach(function (rElement) {
+            rElement.toString()
+                .replace(',', '.')
+        })
+    }
+
+    function clearMessages() {
+        messages = []
+        errorElement.innerText = ""
+    }
 
     function sendGetRequest() {
-        // alert("send-test")
         $.ajax({
-            url: 'controller-servlet',
+            url: 'check-servlet',
             method: 'GET',
             data: {
-                x: pointCoords.xCoord,
-                y: pointCoords.yCoord,
-                r: pointCoords.rCoord
+                x: point.xCoord,
+                y: point.yCoord,
+                r: point.rCoord
             },
-            error: function(jqXHR, exception) {
-                alert('Запрос не был отправлен!' + jqXHR.status + ' ' + exception)
+            error: function() {
+                messages.push('an error occurred while submitting the form')
             }
         })
     }
 
-
-    //TODO сделать проверки чекбоксов
     let form = document.getElementById('input-coordinates')
     form.addEventListener('submit', (e) => {
         e.preventDefault()
-        validate()
-        if (pointCoords.isValid) {
+        clearMessages()
+
+        if (validate()) {
+            setCoordinates()
             sendGetRequest()
+
+        } else {
+            errorElement.innerText = messages.join('!')
         }
     })
 })
