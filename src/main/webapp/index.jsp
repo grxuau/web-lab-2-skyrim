@@ -95,6 +95,7 @@
             <img class="skyrim-radius-r15" src="css/multimedia/skyrim-radius.png" alt="radius = 1.5">
             <img class="skyrim-radius-r2" src="css/multimedia/skyrim-radius.png" alt="radius = 2">
             <img class="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 2.5">
+            <img class="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 3">
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>
