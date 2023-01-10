@@ -77,7 +77,7 @@ fieldset {
 	margin: 20px;
 }
 
-.skyrim-radius-r1 {
+#skyrim-radius-r1 {
 	position: absolute;
 
 	width: 117px;
@@ -88,7 +88,7 @@ fieldset {
 	display: none;
 }
 
-.skyrim-radius-r15 {
+#skyrim-radius-r15 {
 	position: absolute;
 
 	width: 180px;
@@ -99,7 +99,7 @@ fieldset {
 	display: none;
 }
 
-.skyrim-radius-r2 {
+#skyrim-radius-r2 {
 	position: absolute;
 
 	width: 236px;
@@ -110,7 +110,7 @@ fieldset {
 	display: none;
 }
 
-.skyrim-radius-r25 {
+#skyrim-radius-r25 {
 	position: absolute;
 
 	width: 300px;
@@ -121,7 +121,7 @@ fieldset {
 	display: none;
 }
 
-.skyrim-radius-r3 {
+#skyrim-radius-r3 {
 	position: absolute;
 
 	width: 356px;

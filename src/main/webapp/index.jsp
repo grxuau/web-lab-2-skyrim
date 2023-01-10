@@ -53,19 +53,19 @@
 
                     <fieldset>
                         <legend> Select 'R' </legend>
-                        <input type="checkbox" id="r1" name="rCoord" value="1">
+                        <input type="checkbox" id="r1" name="rCoord" value="1" onclick="showCheckedRadius()">
                         <label for="r1">1</label>
 
-                        <input type="checkbox" id="r1.5" name="rCoord" value="1.5">
+                        <input type="checkbox" id="r1.5" name="rCoord" value="1.5" onclick="showCheckedRadius()">
                         <label for="r1.5">1.5</label>
 
-                        <input type="checkbox" id="r2" name="rCoord" value="2">
+                        <input type="checkbox" id="r2" name="rCoord" value="2" onclick="showCheckedRadius()">
                         <label for="r2">2</label>
 
-                        <input type="checkbox" id="r2.5" name="rCoord" value="2.5">
+                        <input type="checkbox" id="r2.5" name="rCoord" value="2.5" onclick="showCheckedRadius()">
                         <label for="r2.5">2.5</label>
 
-                        <input type="checkbox" id="r3" name="rCoord" value="3">
+                        <input type="checkbox" id="r3" name="rCoord" value="3" onclick="showCheckedRadius()">
                         <label for="r3">3</label>
                     </fieldset>
 
@@ -90,12 +90,19 @@
                         <meta http-equiv="Refresh" content="0; url='./jsnotfound.html'" />
                 </noscript>
             </div>
+<%--            fixme coordinate plane position is incorrect --%>
             <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
-            <img class="skyrim-radius-r1" src="css/multimedia/skyrim-radius.png" alt="radius = 1">
-            <img class="skyrim-radius-r15" src="css/multimedia/skyrim-radius.png" alt="radius = 1.5">
-            <img class="skyrim-radius-r2" src="css/multimedia/skyrim-radius.png" alt="radius = 2">
-            <img class="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 2.5">
-            <img class="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 3">
+            <img id="skyrim-radius-r1" src="css/multimedia/skyrim-radius.png" alt="radius = 1">
+            <img id="skyrim-radius-r15" src="css/multimedia/skyrim-radius.png" alt="radius = 1.5">
+            <img id="skyrim-radius-r2" src="css/multimedia/skyrim-radius.png" alt="radius = 2">
+            <img id="skyrim-radius-r25" src="css/multimedia/skyrim-radius.png" alt="radius = 2.5">
+            <img id="skyrim-radius-r3" src="css/multimedia/skyrim-radius.png" alt="radius = 3">
+<%--fixme doesn't work properly--%>
+<%--            <script type="module">--%>
+<%--                import {showCheckedRadius} from './scripts/radius-setter.js'--%>
+<%--                showCheckedRadius()--%>
+<%--            </script>--%>
+
         </div>
     </body>
     <script defer src="scripts/jquery-3.6.3.js"></script>

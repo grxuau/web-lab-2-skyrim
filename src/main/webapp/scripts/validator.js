@@ -1,3 +1,5 @@
+// import {getCheckedBoxes} from "./checkbox-getter";
+
 $(document).ready(function () {
     //покрыть тестами
     const MAX_INPUT_LENGTH = 12;
@@ -81,7 +83,6 @@ $(document).ready(function () {
 
         return true
     }
-
 
     function getCheckedBoxes() {
         let checkedValues = []
