@@ -42,6 +42,7 @@ $(document).ready(function () {
             ctx.fillStyle = hit ? '#2C622C' : '#831F1F'
             ctx.beginPath()
             ctx.arc(x, y, pointSize, 0, Math.PI * 2, true)
+            ctx.closePath();
             ctx.fill()
         }
 
@@ -58,9 +59,6 @@ $(document).ready(function () {
                         x: point.xCoord,
                         y: point.yCoord,
                         r: point.rCoord
-                    },
-                    success: function () {
-
                     },
                     error: function() {
                         alert('Отладочное сообщение!')
