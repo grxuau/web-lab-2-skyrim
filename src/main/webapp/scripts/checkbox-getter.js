@@ -1,3 +1,4 @@
+//todo вынести все вторичные функции в файл utils.js
 export function getCheckedBoxes() {
     $(document).ready(function () {
         let checkedValues = []

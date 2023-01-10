@@ -24,7 +24,7 @@ $(document).ready(function () {
         })
 
         function getX(pixels, widthPx) {
-            return -3.5 * (1 - pixels / (width / 2));
+            return -3.5 * (1 - pixels / (widthPx / 2));
         }
 
         function getY(pixels, heigthPx) {
@@ -34,6 +34,15 @@ $(document).ready(function () {
         function getR() {
             let r = getCheckedBoxes()
             return r.length > 0 ? r : undefined
+        }
+        //do I need to insert timeout here?
+        function drawPoint(x, y, hit) {
+            const pointSize = 2.5
+            const ctx = document.getElementById('dot-drawer').getContext('2d')
+            ctx.fillStyle = hit ? '#2C622C' : '#831F1F'
+            ctx.beginPath()
+            ctx.arc(x, y, pointSize, 0, Math.PI * 2, true)
+            ctx.fill()
         }
 
         function sendGetRequest() {
@@ -49,6 +58,9 @@ $(document).ready(function () {
                         x: point.xCoord,
                         y: point.yCoord,
                         r: point.rCoord
+                    },
+                    success: function () {
+
                     },
                     error: function() {
                         alert('Отладочное сообщение!')

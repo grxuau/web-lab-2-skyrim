@@ -132,6 +132,10 @@ fieldset {
 	display: none;
 }
 
+#dot-drawer {
+	transition: 0.5s;
+}
+
 #error-message {
 	width: 300px;
 	height: 100px;
