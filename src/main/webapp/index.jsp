@@ -91,7 +91,7 @@
                 </noscript>
             </div>
 <%--            fixme coordinate plane position is incorrect --%>
-            <img class="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
+            <img class="coordinate-plane" id="coordinate-plane" src="css/multimedia/coord-plane.png" alt="coordinate plane">
             <img id="skyrim-radius-r1" src="css/multimedia/skyrim-radius.png" alt="radius = 1">
             <img id="skyrim-radius-r15" src="css/multimedia/skyrim-radius.png" alt="radius = 1.5">
             <img id="skyrim-radius-r2" src="css/multimedia/skyrim-radius.png" alt="radius = 2">
@@ -108,4 +108,5 @@
     <script defer src="scripts/jquery-3.6.3.js"></script>
     <script defer src="scripts/validator.js"></script>
     <script defer src="scripts/radius-setter.js"></script>
+    <script defer src="scripts/interactive-element.js"></script>
     </html>
